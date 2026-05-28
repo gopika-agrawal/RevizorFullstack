@@ -9,6 +9,7 @@ import PrivateRoute from './acomponents/PrivateRoute'
 import Dashboard from './Pages/Dashboard'
 import LandingPage from './Pages/LandingPage'
 import { SwatchBook } from 'lucide-react'
+import Home from './Pages/Home'
 
 function App() {
 
@@ -17,13 +18,18 @@ function App() {
   return (
     <div >
 
-      <div >
+      <div>
 
         <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
 
 
         <Routes>
-          <Route path="/" element={<LandingPage/>} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/home" element={
+            <PrivateRoute isLoggedIn={isLoggedIn}>
+              <Home/>
+            </PrivateRoute>
+          } />
           <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn}/>} />
           <Route path="/signup" element={<Signup setIsLoggedIn={setIsLoggedIn}/>} />
           <Route path='/dashboard' element={

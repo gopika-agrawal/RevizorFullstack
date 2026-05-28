@@ -231,6 +231,7 @@ import {
 } from '@/components/ui/accordion'
 
 const LandingPage = () => {
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#f7fbfa] text-[#07122b]">
 
@@ -272,7 +273,7 @@ const LandingPage = () => {
             {/* BUTTONS */}
             <div className="flex flex-wrap items-center gap-5">
 
-              <Link to={"/"}>
+              <Link to={"/home"}>
                 <Button className="bg-[#07122b] hover:bg-[#0b1735] text-white rounded-full h-14 px-10 text-lg shadow-xl">
                   Get Started
                 </Button>

@@ -93,13 +93,15 @@
 
 
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { useForm } from 'react-hook-form';
 
 const LoginForm = ({ setIsLoggedIn }) => {
 
     const [showPassword, setShowPassword] = useState(false);
+
+    const navigate = useNavigate();
 
     const {
         register,
@@ -110,6 +112,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
     async function onSubmit(data) {
         await new Promise((resolve) => setTimeout(resolve, 4000));
         setIsLoggedIn(true);
+        navigate("/home");
         console.log(data);
     }
 
@@ -139,7 +142,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
                         {...register("email", {
                             required: true,
                             pattern: {
-                                value: /^\S+@\S+$/i,
+                                value: /^[a-zA-Z0-9.+_-]+@gmail\.com$/i,
                                 message: "Invalid Email Address"
                             },
                         })}

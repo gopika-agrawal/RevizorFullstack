@@ -168,7 +168,7 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SignupForm = ({ setIsLoggedIn }) => {
 
@@ -182,10 +182,13 @@ const SignupForm = ({ setIsLoggedIn }) => {
     const [showPassword, setShowPassword] = useState(false);
     const [confirmPassword, setConfirmPassword] = useState(false);
 
+    const navigate = useNavigate();
+
 
     async function onSubmit(data) {
         await new Promise((resolve) => setTimeout(resolve, 4000))
         setIsLoggedIn(true);
+        navigate("/home");
         console.log(data);
     }
 
@@ -365,7 +368,7 @@ const SignupForm = ({ setIsLoggedIn }) => {
                         {...register("email", {
                             required: true,
                             pattern: {
-                                value: /^\S+@\S+$/i,
+                                value: /^[a-zA-Z0-9.+_-]+@gmail\.com$/i,
                                 message: "Invalid Email Address"
                             },
                         })}
@@ -598,6 +601,64 @@ const SignupForm = ({ setIsLoggedIn }) => {
                         }
 
                     </div>
+
+                </div>
+
+
+                {/* University */}
+                <div className='space-y-3'>
+
+                    <label className='
+                    text-[#07122b]
+                    font-semibold
+                    text-lg
+                    '>
+                        University
+                    </label>
+
+                    <input
+                        type='text'
+                        placeholder='Dr. A.P.J. Abdul Kalam Technical University, Lucknow'
+
+                        {...register("university", {
+                            required: true,
+                        })}
+
+                        className='
+                        w-full
+
+                        h-14
+
+                        px-5
+
+                        rounded-2xl
+
+                        bg-white/70
+                        backdrop-blur-xl
+
+                        border border-[#dfeceb]
+
+                        outline-none
+
+                        text-[#07122b]
+
+                        shadow-[0_8px_30px_rgba(0,0,0,0.03)]
+
+                        focus:border-[#27c7b8]
+                        focus:shadow-[0_0_40px_rgba(39,199,184,0.15)]
+
+                        transition-all duration-300
+                        '
+                    />
+
+                    {
+                        errors.university &&
+                        (
+                            <p className='text-red-500 text-sm'>
+                                {errors.university.message}
+                            </p>
+                        )
+                    }
 
                 </div>
 

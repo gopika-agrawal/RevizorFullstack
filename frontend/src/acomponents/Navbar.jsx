@@ -54,7 +54,7 @@
 
 
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import logo from '../assets/logo.png'
 import { Button } from '@/components/ui/button'
 
@@ -62,6 +62,16 @@ const Navbar = (props) => {
 
     let isLoggedIn = props.isLoggedIn;
     let setIsLoggedIn = props.setIsLoggedIn;
+
+    const navigate = useNavigate();
+
+    const logoutHandler = () => {
+        setIsLoggedIn(false);
+        
+        setTimeout(() => {
+            navigate("/");
+        },0);
+    }
 
   return (
 
@@ -125,16 +135,12 @@ const Navbar = (props) => {
 
             {
                 isLoggedIn &&
-                <Link to={"/"}>
-
-                    <Button
-                        className='h-12 px-8 rounded-full bg-[#27c7b8] hover:bg-[#1eb7aa] text-[#07122b] font-semibold transition-all duration-300 shadow-[0_8px_30px_rgba(39,199,184,0.20)] hover:-translate-y-1 hover:shadow-[0_0_45px_rgba(39,199,184,0.35)]'
-                        onClick={() => setIsLoggedIn(false)}
-                        >
-                        Logout
-                    </Button>
-
-                </Link>
+                <Button
+                    className='h-12 px-8 rounded-full bg-[#27c7b8] hover:bg-[#1eb7aa] text-[#07122b] font-semibold transition-all duration-300 shadow-[0_8px_30px_rgba(39,199,184,0.20)] hover:-translate-y-1 hover:shadow-[0_0_45px_rgba(39,199,184,0.35)]'
+                    onClick={logoutHandler}
+                    >
+                    Logout
+                </Button>
             }
 
 

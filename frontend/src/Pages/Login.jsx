@@ -1,7 +1,7 @@
 import Template from '@/acomponents/Template'
 import React from 'react'
 
-const Login = ({setIsLoggedIn}) => {
+const Login = ({ setIsLoggedIn }) => {
 
   return (
 

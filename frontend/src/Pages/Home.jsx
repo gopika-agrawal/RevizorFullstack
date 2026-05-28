@@ -2,7 +2,13 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div></div>
+    <div>
+      
+      <input
+        type='file'
+      />
+
+    </div>
   )
 }
 
