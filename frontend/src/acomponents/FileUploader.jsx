@@ -126,6 +126,7 @@ const FileUploader = () => {
             id="upload"
             type="file"
             multiple
+            accept='application/pdf'
             className="hidden"
             onChange={changeHandler}
         />
@@ -141,6 +142,37 @@ const FileUploader = () => {
                 />
             ))}
         </div>
+
+
+
+        <button
+            // onClick={generateInsights}
+            disabled={selectedFile.length === 0}
+            className="
+            w-full
+
+            h-14
+
+            rounded-2xl
+
+            bg-[#07122b]
+
+            text-white
+
+            font-semibold
+
+            mt-6
+
+            disabled:opacity-50
+            disabled:cursor-not-allowed
+
+            hover:shadow-[0_0_50px_rgba(39,199,184,0.25)]
+
+            transition-all
+            "
+        >
+            Generate Insights
+        </button>
 
     </div>
     );

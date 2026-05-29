@@ -49,7 +49,7 @@
 
 
 import React, { useEffect, useState } from 'react';
-import { FileText, X } from "lucide-react";
+import { FileText, Upload, X } from "lucide-react";
 
 const FileCard = ({ file, id, deleteFile }) => {
 
@@ -181,7 +181,9 @@ const FileCard = ({ file, id, deleteFile }) => {
             </div>
 
             <p className="text-xs mt-2 text-[#5f6c8d]">
-                Uploading... {progress}%
+                {
+                    progress === 100 ? "Uploaded" : `Uploading... ${progress}%` 
+                }
             </p>
 
         </div>
