@@ -13,7 +13,9 @@ import Home from './Pages/Home'
 
 function App() {
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("isLoggedIn") === "true");
+
+
 
   return (
     <div >

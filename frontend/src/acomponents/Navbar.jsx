@@ -67,6 +67,8 @@ const Navbar = (props) => {
 
     const logoutHandler = () => {
         setIsLoggedIn(false);
+
+        localStorage.removeItem("isLoggedIn");
         
         setTimeout(() => {
             navigate("/");

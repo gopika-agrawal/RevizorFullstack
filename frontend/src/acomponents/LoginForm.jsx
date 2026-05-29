@@ -112,6 +112,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
     async function onSubmit(data) {
         await new Promise((resolve) => setTimeout(resolve, 4000));
         setIsLoggedIn(true);
+        localStorage.setItem("isLoggedIn", "true");
         navigate("/home");
         console.log(data);
     }

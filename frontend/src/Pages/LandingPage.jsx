@@ -582,10 +582,12 @@ const LandingPage = () => {
               analytics, and revision notes instantly.
             </p>
 
-            <Button className="mt-10 bg-[#27c7b8] hover:bg-[#22b3a5] text-[#07122b] rounded-full h-14 px-10 text-lg font-bold animate-bounce">
-              Start Preparation
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            <Link to={"/home"}>
+              <Button className="mt-10 bg-[#27c7b8] hover:bg-[#22b3a5] text-[#07122b] rounded-full h-14 px-10 text-lg font-bold animate-bounce">
+                Start Preparation
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
 
           </div>
 
