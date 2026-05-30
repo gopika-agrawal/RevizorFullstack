@@ -60,7 +60,7 @@ const FileUploader = () => {
 
         useEffect(() => {
             console.log(selectedFile);
-        },[selectedFile]);
+        });
     
 
     const changeHandler = (event) => {
@@ -75,6 +75,28 @@ const FileUploader = () => {
     function deleteFile(id){
        setSelectedFile(prev => prev.filter(item => item.id !== id));
        console.log(selectedFile);
+    }
+
+    async function generateInsights(){
+        console.log("Generating insights for files");
+        try{
+
+            const formData = new FormData();
+            selectedFile.forEach((item) => {
+                formData.append("files", item.file);
+            });
+            const response = await fetch("http://localhost:8080/api/upload", {
+                method: "POST",
+                // content: "application/json",
+                body: formData
+            });
+            const data = await response.json();
+            console.log(data);
+
+        }
+        catch(error){
+            console.log(error);
+        }
     }
 
     return (
@@ -146,7 +168,7 @@ const FileUploader = () => {
 
 
         <button
-            // onClick={generateInsights}
+            onClick={generateInsights}
             disabled={selectedFile.length === 0}
             className="
             w-full

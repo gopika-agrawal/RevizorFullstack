@@ -186,10 +186,23 @@ const SignupForm = ({ setIsLoggedIn }) => {
 
 
     async function onSubmit(data) {
-        await new Promise((resolve) => setTimeout(resolve, 4000))
-        setIsLoggedIn(true);
-        navigate("/home");
-        console.log(data);
+        try{
+            await new Promise((resolve) => setTimeout(resolve, 2000))
+            const response = await fetch("http://localhost:8080/api/users", {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+            const output = await response.json();
+            setIsLoggedIn(true);
+            navigate("/home");
+            console.log(output);
+        }
+        catch(error){
+            console.log(error);
+        }
     }
 
 
@@ -221,7 +234,7 @@ const SignupForm = ({ setIsLoggedIn }) => {
                             type='text'
                             placeholder='Enter First Name'
 
-                            {...register("firstname", {
+                            {...register("firstName", {
                                 required: true,
                                 pattern: {
                                     value: /^[a-zA-Z]+$/,
@@ -265,10 +278,10 @@ const SignupForm = ({ setIsLoggedIn }) => {
                         />
 
                         {
-                            errors.firstname &&
+                            errors.firstName &&
                             (
                                 <p className='text-red-500 text-sm'>
-                                    {errors.firstname.message}
+                                    {errors.firstName.message}
                                 </p>
                             )
                         }
@@ -292,7 +305,7 @@ const SignupForm = ({ setIsLoggedIn }) => {
                             type='text'
                             placeholder='Enter Last Name'
 
-                            {...register("lastname", {
+                            {...register("lastName", {
                                 required: true,
                                 pattern: {
                                     value: /^[a-zA-Z]+$/,
@@ -336,10 +349,10 @@ const SignupForm = ({ setIsLoggedIn }) => {
                         />
 
                         {
-                            errors.lastname &&
+                            errors.lastName &&
                             (
                                 <p className='text-red-500 text-sm'>
-                                    {errors.lastname.message}
+                                    {errors.lastName.message}
                                 </p>
                             )
                         }
@@ -434,7 +447,7 @@ const SignupForm = ({ setIsLoggedIn }) => {
 
                                 placeholder='Enter Password'
 
-                                {...register("createPassword", {
+                                {...register("password", {
                                     required: true,
                                     pattern: {
                                         value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
@@ -498,10 +511,10 @@ const SignupForm = ({ setIsLoggedIn }) => {
                         </div>
 
                         {
-                            errors.createPassword &&
+                            errors.password &&
                             (
                                 <p className='text-red-500 text-sm'>
-                                    {errors.createPassword.message}
+                                    {errors.password.message}
                                 </p>
                             )
                         }

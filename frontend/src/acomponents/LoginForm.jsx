@@ -110,7 +110,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
     } = useForm();
 
     async function onSubmit(data) {
-        await new Promise((resolve) => setTimeout(resolve, 4000));
+        await new Promise((resolve) => setTimeout(resolve, 2000));
         setIsLoggedIn(true);
         localStorage.setItem("isLoggedIn", "true");
         navigate("/home");

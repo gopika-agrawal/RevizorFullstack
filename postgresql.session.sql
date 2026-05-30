@@ -1,1 +1,1 @@
-Delete from users
+Select * FROM question;
