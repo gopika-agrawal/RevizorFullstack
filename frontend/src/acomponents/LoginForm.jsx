@@ -96,6 +96,8 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const LoginForm = ({ setIsLoggedIn }) => {
 
@@ -110,11 +112,38 @@ const LoginForm = ({ setIsLoggedIn }) => {
     } = useForm();
 
     async function onSubmit(data) {
-        await new Promise((resolve) => setTimeout(resolve, 2000));
-        setIsLoggedIn(true);
-        localStorage.setItem("isLoggedIn", "true");
-        navigate("/home");
-        console.log(data);
+        // await new Promise((resolve) => setTimeout(resolve, 2000));
+        // setIsLoggedIn(true);
+        // localStorage.setItem("isLoggedIn", "true");
+        // navigate("/home");
+        // console.log(data);
+        try{
+            
+            const response = await fetch("http://localhost:8080/api/users/login",{
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+            // console.log(response);
+            // console.log(response.headers.get("content-type"));
+            const result = await response.json();
+            console.log(result);
+            if(result.message === "Login successful"){
+                setIsLoggedIn(true);
+                localStorage.setItem("isLoggedIn", "true");
+                navigate("/home");
+                console.log(result);
+            }
+            else{
+                toast.error("Invalid email or password");
+            }
+
+        }
+        catch(error){
+            console.error(error);
+        }
     }
 
     return (

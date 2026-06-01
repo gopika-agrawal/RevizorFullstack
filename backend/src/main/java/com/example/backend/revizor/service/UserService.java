@@ -3,6 +3,7 @@ package com.example.backend.revizor.service;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
+import com.example.backend.revizor.dto.UserDto;
 import com.example.backend.revizor.entity.Users;
 import com.example.backend.revizor.repository.UserRepository;
 
@@ -11,6 +12,8 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class UserService{
+
+    
 
     private final UserRepository userRepository;
 
@@ -23,4 +26,42 @@ public class UserService{
         return newUser;
     }
 
+    public String loginUser(UserDto userDto){
+        
+        Users user = userRepository.findByEmail(userDto.getEmail());
+
+        if(user != null && user.getPassword().equals(userDto.getPassword())){
+            return "Login successful";
+        }
+        return "Invalid email or password";
+    }
+
+
+
+
+    //     public String loginUser(UserDto userDto){
+
+    //     Users user = userRepository.findByEmail(userDto.getEmail());
+
+    //     System.out.println("User found: " + user);
+
+    //     if(user == null){
+    //         System.out.println("User is null");
+    //         return "Invalid email or password";
+    //     }
+
+    //     System.out.println("DB Password = " + user.getPassword());
+    //     System.out.println("Entered Password = " + userDto.getPassword());
+
+    //     boolean match = user.getPassword().equals(userDto.getPassword());
+
+    //     System.out.println("Password Match = " + match);
+
+    //     if(match){
+    //         System.out.println("Inside Success Block");
+    //         return "Login successful";
+    //     }
+
+    //     return "Invalid email or password";
+    // }
 }
