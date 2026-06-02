@@ -1,10 +1,13 @@
 package com.example.backend.revizor.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -49,6 +52,9 @@ public class Users{
     @NotBlank(message = "university is required")
     @Column(nullable = false)
     private String university;
+
+    @OneToMany(mappedBy = "user")
+    private List<UploadFile> uploadFile;
 
 
 }
