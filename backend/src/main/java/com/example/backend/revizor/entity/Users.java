@@ -56,5 +56,8 @@ public class Users{
     @OneToMany(mappedBy = "user")
     private List<UploadFile> uploadFile;
 
+    // @OneToMany(mappedBy = "user")
+    // private Question question;
+
 
 }

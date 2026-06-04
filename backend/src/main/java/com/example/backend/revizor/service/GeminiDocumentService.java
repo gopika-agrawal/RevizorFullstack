@@ -14,8 +14,6 @@ public class GeminiDocumentService {
 
     public String parseExamPaper(MultipartFile file) throws InterruptedException {
 
-        System.out.println("API Key: " + apiKey);
-
         Client client = Client.builder()
                 .apiKey(apiKey)
                 .build();

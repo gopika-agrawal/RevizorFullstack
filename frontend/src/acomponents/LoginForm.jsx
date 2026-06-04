@@ -135,6 +135,10 @@ const LoginForm = ({ setIsLoggedIn }) => {
                 localStorage.setItem("isLoggedIn", "true");
                 navigate("/home");
                 console.log(result);
+                localStorage.setItem("userId", result.userId);
+                localStorage.setItem("university", result.university);
+                console.log("Userid:", result.userId);
+                console.log("Uni:", result.university);
             }
             else{
                 toast.error("Invalid email or password");

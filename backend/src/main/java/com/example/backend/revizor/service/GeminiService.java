@@ -14,8 +14,6 @@ public class GeminiService {
 
   public String extractQuestions(String rawText) {
 
-    System.out.println("API Key: " + apiKey);
-
     Client client = Client.builder()
         .apiKey(apiKey)
         .build();

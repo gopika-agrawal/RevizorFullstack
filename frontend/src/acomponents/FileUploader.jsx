@@ -85,12 +85,19 @@ const FileUploader = () => {
             selectedFile.forEach((item) => {
                 formData.append("files", item.file);
             });
-            const response = await fetch("http://localhost:8080/api/upload", {
+            const id = localStorage.getItem("userId");
+            console.log("Sending request with userId:", id);
+
+            const url = `http://localhost:8080/api/upload/${id}`;
+
+            console.log(url);
+            const response = await fetch(url, {
                 method: "POST",
                 // content: "application/json",
                 body: formData
             });
             const data = await response.json();
+            
             console.log(data);
 
         }

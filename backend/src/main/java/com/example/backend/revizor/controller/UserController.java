@@ -42,9 +42,18 @@ public class UserController{
 
     @PostMapping("/login")
     public ResponseEntity<Map<String,String>> logInUser(@RequestBody @Valid UserDto userDto){
-        Map<String,String> response = new HashMap<>();
-        response.put("message", userService.loginUser(userDto));
-        return ResponseEntity.ok(response);
+
+        Users user = userService.loginUser(userDto);
+        
+        if(user == null){
+            return ResponseEntity.status(401).body(Map.of("message","Invalid email or password"));
+        }
+        
+        return ResponseEntity.ok(Map.of(
+            "message", "Login successful",
+            "userId", user.getId().toString(),
+            "university", user.getUniversity()
+        ));
     }
 
 }

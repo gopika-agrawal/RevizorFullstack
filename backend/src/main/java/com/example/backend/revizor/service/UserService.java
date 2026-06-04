@@ -26,16 +26,17 @@ public class UserService{
         return newUser;
     }
 
-    public String loginUser(UserDto userDto){
+    public Users loginUser(UserDto userDto){
         
         Users user = userRepository.findByEmail(userDto.getEmail());
 
         if(user != null && user.getPassword().equals(userDto.getPassword())){
-            return "Login successful";
+            return user;
         }
-        return "Invalid email or password";
-    }
+        
+        return null;
 
+    }
 
 
 
@@ -59,7 +60,7 @@ public class UserService{
 
     //     if(match){
     //         System.out.println("Inside Success Block");
-    //         return "Login successful";
+    //         return user.getId().toString();
     //     }
 
     //     return "Invalid email or password";

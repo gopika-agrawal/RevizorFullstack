@@ -17,8 +17,10 @@ import com.example.backend.revizor.dto.PaperResponseDto;
 import com.example.backend.revizor.dto.QuestionExtraction;
 import com.example.backend.revizor.entity.Question;
 import com.example.backend.revizor.entity.UploadFile;
+import com.example.backend.revizor.entity.Users;
 import com.example.backend.revizor.repository.QuestionRepository;
 import com.example.backend.revizor.repository.UploadFileRepository;
+import com.example.backend.revizor.repository.UserRepository;
 import com.example.backend.revizor.service.GeminiService;
 import com.example.backend.revizor.service.PdfService;
 
@@ -27,6 +29,7 @@ import tools.jackson.databind.ObjectMapper;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @RestController
@@ -44,6 +47,8 @@ public class FileController {
 
     private final QuestionRepository questionRepository;
 
+    private final UserRepository userRepository;
+
     private String extractYear(String fileName) {
         Pattern pattern = Pattern.compile("(20\\d{2})");
         Matcher matcher = pattern.matcher(fileName);
@@ -53,11 +58,15 @@ public class FileController {
         return "Unknown Year";
     }
 
-    @PostMapping
+    @PostMapping("/{id}")
     public ResponseEntity<Map<String, String>> uploadFiles(
+            @PathVariable Long id,
             @RequestParam("files") List<MultipartFile> files) throws IOException, InterruptedException {
 
         StringBuilder allText = new StringBuilder();
+
+        Users user = userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found"));
 
         for (MultipartFile file : files) {
 
@@ -88,6 +97,8 @@ public class FileController {
 
         }
 
+        System.out.println("Input Length = " + allText.length());
+
         System.out.println("Extracted Text: " + allText.toString());
 
         String geminiResponse = geminiService.extractQuestions(allText.toString());
@@ -110,6 +121,7 @@ public class FileController {
             UploadFile uploadFile = UploadFile.builder()
                                    .year(paper.getYear())
                                    .subject("Unknown Subject")
+                                   .user(user)
                                    .build();
             uploadFileRepository.save(uploadFile);
 
@@ -117,7 +129,7 @@ public class FileController {
                 Question question = Question.builder()
                                         .questionText(q)
                                         .year(paper.getYear())
-                                        .uploadFile(uploadFile)
+                                        .user(user)
                                         .build();
                 questionRepository.save(question);
             }

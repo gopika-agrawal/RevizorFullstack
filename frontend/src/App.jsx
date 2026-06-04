@@ -11,6 +11,7 @@ import LandingPage from './Pages/LandingPage'
 import { SwatchBook } from 'lucide-react'
 import Home from './Pages/Home'
 
+
 function App() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("isLoggedIn") === "true");
@@ -34,7 +35,7 @@ function App() {
           } />
           <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn}/>} />
           <Route path="/signup" element={<Signup setIsLoggedIn={setIsLoggedIn}/>} />
-          <Route path='/dashboard' element={
+          <Route path='/dashboard/*' element={
             <PrivateRoute isLoggedIn={isLoggedIn}>
             <Dashboard/>
             </PrivateRoute>
