@@ -19,13 +19,12 @@ function App() {
 
 
   return (
-    <div >
 
-      <div>
+      <div className='min-h-screen flex flex-col'>
 
         <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
 
-
+        <main className='flex-1'>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/home" element={
@@ -42,9 +41,10 @@ function App() {
           } />
         </Routes>
 
+       </main>
 
 
-        <div className='flex justify-center items-center gap-4 bg-white/70 backdrop-blur-xl border border-[#dfeceb] rounded-full px-6 py-3 w-full shadow-[0_8px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_0_40px_rgba(39,199,184,0.20)] hover:-translate-y-1 transition-all duration-300'>
+        <footer className='flex justify-center items-center gap-4 bg-white/70 backdrop-blur-xl border border-[#dfeceb] rounded-full px-6 py-3 w-full shadow-[0_8px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_0_40px_rgba(39,199,184,0.20)] hover:-translate-y-1 transition-all duration-300'>
           
           <p className='text-[#07122b] font-semibold tracking-wide text-sm md:text-base'>
             Simplifying the Complexity
@@ -53,12 +53,11 @@ function App() {
             <SwatchBook className='w-5 h-5'/>
           </div>
 
-        </div>
+        </footer>
 
 
       </div>
 
-    </div>
   )
 }
 

@@ -53,10 +53,13 @@
 
 import React, { useState, useEffect } from 'react';
 import FileCard from './FileCard';
+import { useNavigate } from 'react-router-dom';
 
 const FileUploader = () => {
 
     const [selectedFile, setSelectedFile] = useState([]);
+
+    const navigate = useNavigate();
 
         useEffect(() => {
             console.log(selectedFile);
@@ -97,6 +100,14 @@ const FileUploader = () => {
                 body: formData
             });
             const data = await response.json();
+
+            const dashboardResponse = await fetch(`http://localhost:8080/api/dashboard/${id}`);
+
+            const dashboardData = await dashboardResponse.json();
+
+            localStorage.setItem("dashboardData",JSON.stringify(dashboardData));
+            
+            navigate("/dashboard/unit");
             
             console.log(data);
 

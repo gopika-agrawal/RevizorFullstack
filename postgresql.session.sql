@@ -1,1 +1,1 @@
-select * FROM question;
+select * FROM upload_file;

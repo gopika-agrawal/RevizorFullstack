@@ -63,6 +63,10 @@ public class FileController {
             @PathVariable Long id,
             @RequestParam("files") List<MultipartFile> files) throws IOException, InterruptedException {
 
+        questionRepository.deleteByUserId(id);
+
+        uploadFileRepository.deleteByUserId(id);
+
         StringBuilder allText = new StringBuilder();
 
         Users user = userRepository.findById(id)

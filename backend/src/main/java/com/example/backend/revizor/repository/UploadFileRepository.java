@@ -8,4 +8,6 @@ import com.example.backend.revizor.entity.UploadFile;
 @Repository
 public interface UploadFileRepository extends JpaRepository<UploadFile, Long> {
 
+    void deleteByUserId(Long userId);
+
 }

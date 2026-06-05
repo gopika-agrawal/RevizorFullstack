@@ -8,4 +8,6 @@ import com.example.backend.revizor.entity.Question;
 @Repository
 public interface QuestionRepository extends JpaRepository<Question, Long> {
 
+    void deleteByUserId(Long userId);
+
 }
