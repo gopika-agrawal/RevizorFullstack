@@ -1,1 +1,1 @@
-select * FROM upload_file;
+select * FROM users;

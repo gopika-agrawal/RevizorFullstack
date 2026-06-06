@@ -10,7 +10,7 @@ const AnswerPdf = () => {
 
     const university = localStorage.getItem("university");
 
-    const response = await fetch("http://localhost:8080/answer/pdf",
+    const response = await fetch("http://localhost:8080/api/answer/pdf",
       {
         method: "POST",
         headers: {
@@ -18,7 +18,7 @@ const AnswerPdf = () => {
         },
         body: JSON.stringify({
           university,
-          frequencyData
+          frequencyJson: JSON.stringify(frequencyData)
         })
       }
     );

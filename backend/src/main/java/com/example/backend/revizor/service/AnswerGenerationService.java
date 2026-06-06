@@ -38,7 +38,7 @@ public class AnswerGenerationService {
     }
 
 
-    public byte[] generateAnswers(String university, String questionJson){
+    public byte[] generateAnswers(String university, String questionJson) throws Exception{
 
         Client client = Client.builder()
                               .apiKey(apiKey)
@@ -72,7 +72,7 @@ public class AnswerGenerationService {
             - Include advantages, disadvantages, applications when relevant.
             - Include formulas if required.
             - Include diagrams explanation in text if diagrams are applicable.
-            - Keep answers detailed and structured up to 10-15 marks.
+            - Keep answers detailed and structured up to 150-200 words.
 
             OUTPUT FORMAT:
 
