@@ -15,7 +15,6 @@ public class PdfService {
         PDDocument document = Loader.loadPDF(file.getBytes());
         PDFTextStripper stripper = new PDFTextStripper();
         String text = stripper.getText(document);
-        document.close();
         return text;
     }
 
