@@ -25,9 +25,10 @@ import com.example.backend.revizor.service.GeminiService;
 import com.example.backend.revizor.service.PdfService;
 
 import lombok.RequiredArgsConstructor;
-import tools.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -43,7 +44,7 @@ public class FileController {
     private final UploadFileRepository uploadFileRepository;
     private final GeminiService geminiService;
 
-    private final ObjectMapper objectMapper;
+    ObjectMapper objectMapper = new ObjectMapper();
 
     private final QuestionRepository questionRepository;
 
@@ -58,6 +59,7 @@ public class FileController {
         return "Unknown Year";
     }
 
+    @Transactional
     @PostMapping("/{id}")
     public ResponseEntity<Map<String, String>> uploadFiles(
             @PathVariable Long id,

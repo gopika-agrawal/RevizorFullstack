@@ -8,7 +8,7 @@ import com.example.backend.revizor.repository.QuestionRepository;
 import com.example.backend.revizor.service.AnalysisService;
 
 import lombok.RequiredArgsConstructor;
-import tools.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,7 +26,7 @@ public class AnalysisController {
 
     private final QuestionRepository questionRepository;
 
-    private final ObjectMapper objectMapper;
+    ObjectMapper objectMapper = new ObjectMapper();
 
     @GetMapping("/frequency")
     public ResponseEntity<?> getFrequency() throws Exception {

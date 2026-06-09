@@ -17,7 +17,7 @@ import com.example.backend.revizor.repository.UserRepository;
 import com.example.backend.revizor.service.UnitAnanlysisService;
 
 import lombok.RequiredArgsConstructor;
-import tools.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
 @RequestMapping("/unit")
@@ -29,7 +29,7 @@ public class UnitAnalysisController {
 
     private final QuestionRepository questionRepository;
 
-    private final ObjectMapper objectMapper;
+    ObjectMapper objectMapper = new ObjectMapper();
 
     private final UnitAnanlysisService unitAnanlysisService;
     

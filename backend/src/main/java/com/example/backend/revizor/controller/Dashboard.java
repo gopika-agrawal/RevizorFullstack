@@ -19,7 +19,7 @@ import com.example.backend.revizor.service.AnalysisService;
 import com.example.backend.revizor.service.UnitAnanlysisService;
 
 import lombok.RequiredArgsConstructor;
-import tools.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
 @RequestMapping("/dashboard")
@@ -35,7 +35,7 @@ public class Dashboard {
 
     private final UserRepository userRepository;
 
-    private final ObjectMapper objectMapper;
+    ObjectMapper objectMapper = new ObjectMapper();
 
 
     @GetMapping("/{userId}")
