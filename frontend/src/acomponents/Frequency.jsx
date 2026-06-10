@@ -4,17 +4,37 @@ const Frequency = () => {
 
   const [frequencyData, setFrequencyData] = useState([]);
 
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
 
-    const dashboardData = JSON.parse(
-      localStorage.getItem("dashboardData")
-    );
+      const interval = setInterval(() => {
 
-    if (!dashboardData) return;
+          const storedData =
+              localStorage.getItem("dashboardData");
 
-    setFrequencyData(
-      JSON.parse(dashboardData.frequencyAnalysis)
-    );
+          if (storedData) {
+
+              const data =
+                  JSON.parse(storedData);
+
+              if (data.frequencyAnalysis) {
+
+                  setFrequencyData(
+                      JSON.parse(
+                          data.frequencyAnalysis
+                      )
+                  );
+
+                  setLoading(false);
+
+                  clearInterval(interval);
+              }
+          }
+
+      }, 1000);
+
+      return () => clearInterval(interval);
 
   }, []);
 
@@ -32,6 +52,37 @@ const Frequency = () => {
         return "bg-green-100 text-green-700";
     }
   };
+
+
+  if (loading) {
+
+      return (
+
+          <div className="flex flex-col items-center justify-center h-[70vh]">
+
+              <div
+                  className="
+                  w-14
+                  h-14
+                  border-4
+                  border-[#27c7b8]
+                  border-t-transparent
+                  rounded-full
+                  animate-spin
+                  "
+              />
+
+              <p className="mt-4 text-xl font-semibold">
+                  Generating Frequency Analysis...
+              </p>
+
+              <p className="text-gray-500 mt-2">
+                  Finding most repeated questions
+              </p>
+
+          </div>
+      );
+  }
 
   return (
 

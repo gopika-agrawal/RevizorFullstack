@@ -6,17 +6,18 @@ import org.springframework.stereotype.Service;
 import com.google.genai.Client;
 import com.google.genai.types.GenerateContentResponse;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
+@RequiredArgsConstructor
 public class AnalysisService {
 
-  @Value("${gemini.api.key}")
+  private final GroqService groqService;
+
+  @Value("${groq.api.key}")
   private String apiKey;
 
-  public String analyzeQuestions(String questionJson) {
-
-    Client client = Client.builder()
-        .apiKey(apiKey)
-        .build();
+  public String analyzeQuestions(String questionJson) throws Exception {
 
     String prompt = """
         You are an expert university exam paper analyst.
@@ -75,22 +76,14 @@ public class AnalysisService {
         """
         .formatted(questionJson);
 
-    try {
-      return client.models.generateContent(
-          "gemini-2.5-flash",
-          prompt,
-          null)
-          .text();
+    String response = groqService.ask(prompt);
 
-    } catch (Exception e) {
+    int start = response.indexOf("[");
+    int end = response.lastIndexOf("]");
 
-      System.out.println("2.5 Flash failed. Trying Lite...");
+    String cleaned = response.substring(start, end+1);
 
-      return client.models.generateContent(
-          "gemini-2.5-flash-lite",
-          prompt,
-          null)
-          .text();
-    }
+    return cleaned;
+
   }
 }

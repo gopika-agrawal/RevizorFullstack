@@ -135,6 +135,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
                 localStorage.setItem("isLoggedIn", "true");
                 navigate("/home");
                 console.log(result);
+                localStorage.setItem("hasVisited", "true");
                 localStorage.setItem("userId", result.userId);
                 localStorage.setItem("university", result.university);
                 console.log("Userid:", result.userId);

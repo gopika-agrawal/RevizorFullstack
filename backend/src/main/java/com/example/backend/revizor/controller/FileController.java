@@ -22,6 +22,7 @@ import com.example.backend.revizor.repository.QuestionRepository;
 import com.example.backend.revizor.repository.UploadFileRepository;
 import com.example.backend.revizor.repository.UserRepository;
 import com.example.backend.revizor.service.GeminiService;
+import com.example.backend.revizor.service.GroqService;
 import com.example.backend.revizor.service.PdfService;
 
 import lombok.RequiredArgsConstructor;
@@ -42,7 +43,9 @@ public class FileController {
     private final PdfService pdfService;
     // private final UploadFile uploadFile;
     private final UploadFileRepository uploadFileRepository;
-    private final GeminiService geminiService;
+    // private final GeminiService geminiService;
+
+    private final GroqService groqService;
 
     ObjectMapper objectMapper = new ObjectMapper();
 
@@ -63,7 +66,7 @@ public class FileController {
     @PostMapping("/{id}")
     public ResponseEntity<Map<String, String>> uploadFiles(
             @PathVariable Long id,
-            @RequestParam("files") List<MultipartFile> files) throws IOException, InterruptedException {
+            @RequestParam("files") List<MultipartFile> files) throws Exception, IOException, InterruptedException {
 
         questionRepository.deleteByUserId(id);
 
@@ -107,9 +110,12 @@ public class FileController {
 
         System.out.println("Extracted Text: " + allText.toString());
 
-        String geminiResponse = geminiService.extractQuestions(allText.toString());
+        // String geminiResponse = geminiService.extractQuestions(allText.toString());
 
-        String cleanedResponse = geminiResponse
+        String groqResponse = groqService.extractQuestions(allText.toString());
+
+
+        String cleanedResponse = groqResponse
                 .replace("```json", "")
                 .replace("```", "")
                 .trim();

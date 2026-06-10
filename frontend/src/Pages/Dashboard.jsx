@@ -8,6 +8,9 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 
 
 const Dashboard = () => {
+
+  const hasData = localStorage.getItem("dashboardData");
+
   return (
     <div className='w-full h-full'>
 
@@ -15,8 +18,14 @@ const Dashboard = () => {
 
         <Routes>
 
-          {/* <Route index element={<Navigate to="unit" replace />}/> */}
-
+          <Route
+            index
+            element={
+              hasData
+                ? <Navigate to="unit" replace />
+                : <Navigate to="/upload" replace />
+            }
+          />
           <Route path="unit" element={<Unit/>}/>
           <Route path="frequency" element={<Frequency/>} />
           <Route path="answer" element={<AnswerPdf/>} />

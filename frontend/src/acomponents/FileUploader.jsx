@@ -59,6 +59,9 @@ const FileUploader = () => {
 
     const [selectedFile, setSelectedFile] = useState([]);
 
+    const [loading, setLoading] = useState(false);
+    
+
     const navigate = useNavigate();
 
         useEffect(() => {
@@ -82,6 +85,7 @@ const FileUploader = () => {
 
     async function generateInsights(){
         console.log("Generating insights for files");
+        setLoading(true);
         try{
 
             const formData = new FormData();
@@ -101,19 +105,25 @@ const FileUploader = () => {
             });
             const data = await response.json();
 
+            localStorage.removeItem("dashboardData");
+            
+            navigate("/dashboard/unit");
+
             const dashboardResponse = await fetch(`http://localhost:8080/api/dashboard/${id}`);
 
             const dashboardData = await dashboardResponse.json();
 
             localStorage.setItem("dashboardData",JSON.stringify(dashboardData));
             
-            navigate("/dashboard/unit");
             
             console.log(data);
 
         }
         catch(error){
             console.log(error);
+        }
+        finally{
+            setLoading(false);
         }
     }
 
@@ -187,7 +197,7 @@ const FileUploader = () => {
 
         <button
             onClick={generateInsights}
-            disabled={selectedFile.length === 0}
+            disabled={selectedFile.length === 0 || loading}
             className="
             w-full
 
@@ -211,7 +221,14 @@ const FileUploader = () => {
             transition-all
             "
         >
-            Generate Insights
+            {loading ? (
+                    <div className="flex items-center justify-center gap-2">
+                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        <span>Generating Insights...</span>
+                    </div>
+                ) : (
+                    "Generate Insights"
+                )}
         </button>
 
     </div>

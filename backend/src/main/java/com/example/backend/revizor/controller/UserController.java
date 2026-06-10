@@ -26,34 +26,44 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/users")
 @RequiredArgsConstructor
 @CrossOrigin(origins = "http://localhost:5173")
-public class UserController{
+public class UserController {
 
     private final UserService userService;
 
     @GetMapping
-    public List<Users> getAllUsers(){
+    public List<Users> getAllUsers() {
         return userService.getAllUsers();
     }
 
     @PostMapping
-    public Users createUser(@RequestBody @Valid Users user){
-        return userService.createUser(user);
+    public ResponseEntity<Map<String,String>> createUser(@RequestBody @Valid Users user) {
+        Users savedUser = userService.createUser(user);
+
+        return ResponseEntity.ok(
+                Map.of(
+                        "message",
+                        "Signup successful",
+
+                        "userId",
+                        savedUser.getId().toString(),
+
+                        "university",
+                        savedUser.getUniversity()));
     }
 
     @PostMapping("/login")
-    public ResponseEntity<Map<String,String>> logInUser(@RequestBody @Valid UserDto userDto){
+    public ResponseEntity<Map<String, String>> logInUser(@RequestBody @Valid UserDto userDto) {
 
         Users user = userService.loginUser(userDto);
-        
-        if(user == null){
-            return ResponseEntity.status(401).body(Map.of("message","Invalid email or password"));
+
+        if (user == null) {
+            return ResponseEntity.status(401).body(Map.of("message", "Invalid email or password"));
         }
-        
+
         return ResponseEntity.ok(Map.of(
-            "message", "Login successful",
-            "userId", user.getId().toString(),
-            "university", user.getUniversity()
-        ));
+                "message", "Login successful",
+                "userId", user.getId().toString(),
+                "university", user.getUniversity()));
     }
 
 }

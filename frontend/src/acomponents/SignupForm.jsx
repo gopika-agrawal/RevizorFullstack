@@ -196,6 +196,19 @@ const SignupForm = ({ setIsLoggedIn }) => {
                 body: JSON.stringify(data)
             })
             const output = await response.json();
+            localStorage.setItem("hasVisited", "true");
+            localStorage.setItem(
+                "userId",
+                output.userId
+            );
+
+            localStorage.setItem(
+                "university",
+                output.university
+            );
+            
+            localStorage.setItem("isLoggedIn", "true");
+
             setIsLoggedIn(true);
             navigate("/home");
             console.log(output);

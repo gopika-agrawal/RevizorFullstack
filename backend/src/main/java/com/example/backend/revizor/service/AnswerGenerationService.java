@@ -11,10 +11,15 @@ import com.lowagie.text.Document;
 import com.lowagie.text.Paragraph;
 import com.lowagie.text.pdf.PdfWriter;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
+@RequiredArgsConstructor
 public class AnswerGenerationService {
+
+    private final GroqService groqService;
     
-    @Value("${gemini.api.key}")
+    @Value("${groq.api.key}")
     private String apiKey;
 
 
@@ -39,11 +44,6 @@ public class AnswerGenerationService {
 
 
     public byte[] generateAnswers(String university, String questionJson) throws Exception{
-
-        Client client = Client.builder()
-                              .apiKey(apiKey)
-                              .build();
-
         
         String prompt = """
             You are an expert university professor, examiner, and academic content writer.
@@ -72,7 +72,7 @@ public class AnswerGenerationService {
             - Include advantages, disadvantages, applications when relevant.
             - Include formulas if required.
             - Include diagrams explanation in text if diagrams are applicable.
-            - Keep answers detailed and structured up to 150-200 words.
+            - Keep answers detailed and structured up to 10-15 marks.
 
             OUTPUT FORMAT:
 
@@ -100,14 +100,10 @@ public class AnswerGenerationService {
             """.formatted(university, questionJson);
 
         
-        GenerateContentResponse response =
-                client.models.generateContent(
-                        "gemini-2.5-flash",
-                        prompt,
-                        null);
+        String response = groqService.ask(prompt);
 
         String cleaned =
-                response.text()
+                response
                         .replace("```json", "")
                         .replace("```", "")
                         .trim();

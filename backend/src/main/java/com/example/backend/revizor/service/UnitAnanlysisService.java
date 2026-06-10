@@ -6,17 +6,18 @@ import org.springframework.beans.factory.annotation.Value;
 import com.google.genai.Client;
 import com.google.genai.types.GenerateContentResponse;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
+@RequiredArgsConstructor
 public class UnitAnanlysisService {
 
-    @Value("${gemini.api.key}")
+    private final GroqService groqService;
+
+    @Value("${groq.api.key}")
     private String apiKey;
 
-    public String analysisUnits(String university, String questionJson) {
-
-        Client client = Client.builder()
-                .apiKey(apiKey)
-                .build();
+    public String analysisUnits(String university, String questionJson) throws Exception {
 
         String prompt = """
                 You are an expert university syllabus analyzer.
@@ -85,9 +86,9 @@ public class UnitAnanlysisService {
                         university,
                         questionJson);
 
-        GenerateContentResponse response = client.models.generateContent("gemini-2.5-flash", prompt, null);
+        String response = groqService.ask(prompt);
 
-        return response.text();
+        return response;
 
     }
 

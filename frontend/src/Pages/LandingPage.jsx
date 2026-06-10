@@ -206,7 +206,7 @@
 
 import { Button } from '@/components/ui/button'
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import landingImage from '../assets/landingImage.png'
 
 import {
@@ -231,6 +231,30 @@ import {
 } from '@/components/ui/accordion'
 
 const LandingPage = () => {
+
+  const navigate = useNavigate();
+
+  function handleGetStarted() {
+
+      const hasVisited =
+          localStorage.getItem("hasVisited");
+
+      const isLoggedIn =
+          localStorage.getItem("isLoggedIn");
+
+      if (isLoggedIn === "true") {
+
+          navigate("/home");
+
+      } else if (hasVisited) {
+
+          navigate("/login");
+
+      } else {
+
+          navigate("/signup");
+      }
+  }
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#f7fbfa] text-[#07122b]">
@@ -274,7 +298,7 @@ const LandingPage = () => {
             <div className="flex flex-wrap items-center gap-5">
 
               <Link to={"/home"}>
-                <Button className="bg-[#07122b] hover:bg-[#0b1735] text-white rounded-full h-14 px-10 text-lg shadow-xl">
+                <Button onClick={handleGetStarted} className="bg-[#07122b] hover:bg-[#0b1735] text-white rounded-full h-14 px-10 text-lg shadow-xl">
                   Get Started
                 </Button>
               </Link>

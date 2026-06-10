@@ -5,11 +5,73 @@ const Unit = () => {
 
     const [ unitAnalysis, setUnitAnalysis ] = useState([]);
 
-    useEffect(() => {
-        const data = JSON.parse(localStorage.getItem("dashboardData"));
+    const [loading, setLoading] = useState(true);
 
-        setUnitAnalysis(JSON.parse(data.unitAnalysis));
-    },[])
+    useEffect(() => {
+
+        const interval = setInterval(() => {
+
+            const storedData =
+                localStorage.getItem("dashboardData");
+
+            if (storedData) {
+
+                const data =
+                    JSON.parse(storedData);
+
+                if (data.unitAnalysis) {
+
+                    setUnitAnalysis(
+                        JSON.parse(
+                            data.unitAnalysis
+                        )
+                    );
+
+                    setLoading(false);
+
+                    clearInterval(interval);
+                }
+            }
+
+        }, 1000);
+
+        return () => clearInterval(interval);
+
+    }, []);
+
+    if (loading) {
+
+        return (
+
+            <div className="flex flex-col items-center justify-center h-[70vh]">
+
+                <div
+                    className="
+                    w-14
+                    h-14
+                    border-4
+                    border-[#27c7b8]
+                    border-t-transparent
+                    rounded-full
+                    animate-spin
+                    "
+                />
+
+                <p className="mt-4 text-xl font-semibold">
+
+                    Generating Insights...
+
+                </p>
+
+                <p className="text-gray-500 mt-2">
+
+                    Analyzing previous year papers
+
+                </p>
+
+            </div>
+        );
+    }
 
 
     const totalQuestions = unitAnalysis.reduce((sum, item) => sum + item.questionCount,0);

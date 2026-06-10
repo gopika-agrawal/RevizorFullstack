@@ -42,7 +42,7 @@ public class Users{
 
     @NotBlank(message = "email is required")
     @Email(message = "email should be valid")
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String email;
 
     @NotBlank(message = "password is required")

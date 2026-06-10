@@ -11,58 +11,60 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class UserService{
-
-    
+public class UserService {
 
     private final UserRepository userRepository;
 
-    public List<Users> getAllUsers(){
+    public List<Users> getAllUsers() {
         return userRepository.findAll();
     }
 
-    public Users createUser(Users user){
-        Users newUser = userRepository.save(user);
-        return newUser;
+    public Users createUser(Users user) {
+        
+        if (userRepository.findByEmail(user.getEmail()) != null) {
+            throw new RuntimeException(
+                    "Email already registered");
+        }
+
+        return userRepository.save(user);
+
     }
 
-    public Users loginUser(UserDto userDto){
-        
+    public Users loginUser(UserDto userDto) {
+
         Users user = userRepository.findByEmail(userDto.getEmail());
 
-        if(user != null && user.getPassword().equals(userDto.getPassword())){
+        if (user != null && user.getPassword().equals(userDto.getPassword())) {
             return user;
         }
-        
+
         return null;
 
     }
 
+    // public String loginUser(UserDto userDto){
 
+    // Users user = userRepository.findByEmail(userDto.getEmail());
 
-    //     public String loginUser(UserDto userDto){
+    // System.out.println("User found: " + user);
 
-    //     Users user = userRepository.findByEmail(userDto.getEmail());
+    // if(user == null){
+    // System.out.println("User is null");
+    // return "Invalid email or password";
+    // }
 
-    //     System.out.println("User found: " + user);
+    // System.out.println("DB Password = " + user.getPassword());
+    // System.out.println("Entered Password = " + userDto.getPassword());
 
-    //     if(user == null){
-    //         System.out.println("User is null");
-    //         return "Invalid email or password";
-    //     }
+    // boolean match = user.getPassword().equals(userDto.getPassword());
 
-    //     System.out.println("DB Password = " + user.getPassword());
-    //     System.out.println("Entered Password = " + userDto.getPassword());
+    // System.out.println("Password Match = " + match);
 
-    //     boolean match = user.getPassword().equals(userDto.getPassword());
+    // if(match){
+    // System.out.println("Inside Success Block");
+    // return user.getId().toString();
+    // }
 
-    //     System.out.println("Password Match = " + match);
-
-    //     if(match){
-    //         System.out.println("Inside Success Block");
-    //         return user.getId().toString();
-    //     }
-
-    //     return "Invalid email or password";
+    // return "Invalid email or password";
     // }
 }
