@@ -239,8 +239,8 @@ const LandingPage = () => {
       const hasVisited =
           localStorage.getItem("hasVisited");
 
-      const isLoggedIn =
-          localStorage.getItem("isLoggedIn");
+      // const isLoggedIn =
+      //     localStorage.getItem("isLoggedIn");
 
       if (isLoggedIn === "true") {
 
