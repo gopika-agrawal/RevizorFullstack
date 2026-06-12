@@ -57,6 +57,8 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import logo from '../assets/logo.png'
 import { Button } from '@/components/ui/button'
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Navbar = (props) => {
 
@@ -66,20 +68,23 @@ const Navbar = (props) => {
     const navigate = useNavigate();
 
     const logoutHandler = () => {
+
         setIsLoggedIn(false);
 
         localStorage.removeItem("isLoggedIn");
-        
-        setTimeout(() => {
-            navigate("/");
-        },0);
+        localStorage.removeItem("userId");
+        localStorage.removeItem("university");
+        localStorage.removeItem("dashboardData");
+        toast.success("Logged out successfully");
+
+        navigate("/");
     }
 
   return (
 
     <nav className='sticky top-0 z-50 w-full bg-white/70 backdrop-blur-2xl border-b border-[#dfeceb] shadow-[0_4px_30px_rgba(0,0,0,0.03)]'>
 
-    <div className='max-w-7xl mx-auto h-[88px] px-6 lg:px-14 flex items-center justify-between'>
+    <div className='max-w-7xl mx-auto h-[72px] sm:h-[88px] px-6 lg:px-14 flex items-center justify-between'>
 
         {/* LOGO */}
         <Link to={"/"} className='group flex items-center'>
@@ -105,7 +110,7 @@ const Navbar = (props) => {
 
 
         {/* RIGHT BUTTONS */}
-        <div className='flex items-center gap-4'>
+        <div className='flex items-center gap-2 sm:gap-4'>
 
             {
                 !isLoggedIn &&
@@ -113,7 +118,7 @@ const Navbar = (props) => {
 
                     <Button
                         variant="outline"
-                        className='h-12 px-8 rounded-full border border-[#dfeceb] bg-white/60 backdrop-blur-xl text-[#07122b] text-base font-medium transition-all duration-300 hover:bg-[#f3fffd] hover:border-[#27c7b8] hover:shadow-[0_0_35px_rgba(39,199,184,0.18)] hover:-translate-y-1'>
+                        className='h-10 sm:h-12 px-4 sm:px-8 text-sm sm:text-base rounded-full border border-[#dfeceb] bg-white/60 backdrop-blur-xl text-[#07122b] text-base font-medium transition-all duration-300 hover:bg-[#f3fffd] hover:border-[#27c7b8] hover:shadow-[0_0_35px_rgba(39,199,184,0.18)] hover:-translate-y-1'>
                         Login
                     </Button>
 
@@ -126,7 +131,7 @@ const Navbar = (props) => {
                 <Link to={"/signup"}>
 
                     <Button
-                        className='h-12 px-8 rounded-full bg-[#07122b] hover:bg-[#0b1735] text-white text-base font-semibold shadow-[0_8px_30px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(39,199,184,0.25)]'>
+                        className='h-10 sm:h-12 px-4 sm:px-8 text-sm sm:text-base rounded-full bg-[#07122b] hover:bg-[#0b1735] text-white text-base font-semibold shadow-[0_8px_30px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(39,199,184,0.25)]'>
                         Signup
                     </Button>
 
@@ -138,7 +143,7 @@ const Navbar = (props) => {
             {
                 isLoggedIn &&
                 <Button
-                    className='h-12 px-8 rounded-full bg-[#27c7b8] hover:bg-[#1eb7aa] text-[#07122b] font-semibold transition-all duration-300 shadow-[0_8px_30px_rgba(39,199,184,0.20)] hover:-translate-y-1 hover:shadow-[0_0_45px_rgba(39,199,184,0.35)]'
+                    className='h-10 sm:h-12 px-4 sm:px-8 text-sm sm:text-base rounded-full bg-[#27c7b8] hover:bg-[#1eb7aa] text-[#07122b] font-semibold transition-all duration-300 shadow-[0_8px_30px_rgba(39,199,184,0.20)] hover:-translate-y-1 hover:shadow-[0_0_45px_rgba(39,199,184,0.35)]'
                     onClick={logoutHandler}
                     >
                     Logout
@@ -151,7 +156,7 @@ const Navbar = (props) => {
                 <Link to={"/dashboard"}>
 
                     <Button
-                        className='h-12 px-8 rounded-full bg-[#27c7b8] hover:bg-[#1eb7aa] text-[#07122b] font-semibold transition-all duration-300 shadow-[0_8px_30px_rgba(39,199,184,0.20)] hover:-translate-y-1 hover:shadow-[0_0_45px_rgba(39,199,184,0.35)]'>
+                        className='h-10 sm:h-12 px-4 sm:px-8 text-sm sm:text-base rounded-full bg-[#27c7b8] hover:bg-[#1eb7aa] text-[#07122b] font-semibold transition-all duration-300 shadow-[0_8px_30px_rgba(39,199,184,0.20)] hover:-translate-y-1 hover:shadow-[0_0_45px_rgba(39,199,184,0.35)]'>
                         Dashboard
                     </Button>
 

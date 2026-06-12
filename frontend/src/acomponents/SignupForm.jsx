@@ -169,14 +169,19 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SignupForm = ({ setIsLoggedIn }) => {
 
     const {
         register,
         handleSubmit,
+        watch,
         formState: { errors, isSubmitting }
     } = useForm();
+
+    const password = watch("password");
 
 
     const [showPassword, setShowPassword] = useState(false);
@@ -187,7 +192,6 @@ const SignupForm = ({ setIsLoggedIn }) => {
 
     async function onSubmit(data) {
         try{
-            await new Promise((resolve) => setTimeout(resolve, 2000))
             const response = await fetch("http://localhost:8080/api/users", {
                 method: "POST",
                 headers: {
@@ -195,6 +199,12 @@ const SignupForm = ({ setIsLoggedIn }) => {
                 },
                 body: JSON.stringify(data)
             })
+            if(!response.ok){
+                toast.error(
+                    "Signup failed"
+                );
+                return;
+            }
             const output = await response.json();
             localStorage.setItem("hasVisited", "true");
             localStorage.setItem(
@@ -210,11 +220,15 @@ const SignupForm = ({ setIsLoggedIn }) => {
             localStorage.setItem("isLoggedIn", "true");
 
             setIsLoggedIn(true);
+            toast.success("Account created successfully");
             navigate("/home");
-            console.log(output);
         }
         catch(error){
-            console.log(error);
+            console.error(error);
+
+            toast.error(
+                "Unable to connect to server"
+            );
         }
     }
 
@@ -238,7 +252,8 @@ const SignupForm = ({ setIsLoggedIn }) => {
                         <label className='
                         text-[#07122b]
                         font-semibold
-                        text-lg
+                        text-base
+                        sm:text-lg
                         '>
                             First Name
                         </label>
@@ -248,9 +263,9 @@ const SignupForm = ({ setIsLoggedIn }) => {
                             placeholder='Enter First Name'
 
                             {...register("firstName", {
-                                required: true,
+                                required: "First Name is required",
                                 pattern: {
-                                    value: /^[a-zA-Z]+$/,
+                                    value: /^[a-zA-Z ]+$/,
                                     message: "Firstname is not valid"
                                 },
                                 minLength: {
@@ -309,7 +324,8 @@ const SignupForm = ({ setIsLoggedIn }) => {
                         <label className='
                         text-[#07122b]
                         font-semibold
-                        text-lg
+                        text-base
+                        sm:text-lg
                         '>
                             Last Name
                         </label>
@@ -319,9 +335,9 @@ const SignupForm = ({ setIsLoggedIn }) => {
                             placeholder='Enter Last Name'
 
                             {...register("lastName", {
-                                required: true,
+                                required: "Last Name is required",
                                 pattern: {
-                                    value: /^[a-zA-Z]+$/,
+                                    value: /^[a-zA-Z ]+$/,
                                     message: "Lastname is not valid"
                                 },
                                 minLength: {
@@ -382,7 +398,8 @@ const SignupForm = ({ setIsLoggedIn }) => {
                     <label className='
                     text-[#07122b]
                     font-semibold
-                    text-lg
+                    text-base
+                    sm:text-lg
                     '>
                         Email
                     </label>
@@ -392,7 +409,7 @@ const SignupForm = ({ setIsLoggedIn }) => {
                         placeholder='username@gmail.com'
 
                         {...register("email", {
-                            required: true,
+                            required: "Email is required",
                             pattern: {
                                 value: /^[a-zA-Z0-9.+_-]+@gmail\.com$/i,
                                 message: "Invalid Email Address"
@@ -448,7 +465,8 @@ const SignupForm = ({ setIsLoggedIn }) => {
                         <label className='
                         text-[#07122b]
                         font-semibold
-                        text-lg
+                        text-base
+                        sm:text-lg
                         '>
                             Create Password
                         </label>
@@ -461,7 +479,7 @@ const SignupForm = ({ setIsLoggedIn }) => {
                                 placeholder='Enter Password'
 
                                 {...register("password", {
-                                    required: true,
+                                    required: "Password is required",
                                     pattern: {
                                         value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
                                         message: "Password must contains Uppercase, Lowercase, Digit, Symbol"
@@ -499,7 +517,8 @@ const SignupForm = ({ setIsLoggedIn }) => {
                                 '
                             />
 
-                            <span
+                            <button
+                                type='button'
                                 onClick={() => setShowPassword((prev) => !prev)}
 
                                 className='
@@ -519,7 +538,7 @@ const SignupForm = ({ setIsLoggedIn }) => {
                                         : (<AiOutlineEye fontSize={24} fill='#5f6c8d' />)
                                 }
 
-                            </span>
+                            </button>
 
                         </div>
 
@@ -542,7 +561,8 @@ const SignupForm = ({ setIsLoggedIn }) => {
                         <label className='
                         text-[#07122b]
                         font-semibold
-                        text-lg
+                        text-base
+                        sm:text-lg
                         '>
                             Confirm Password
                         </label>
@@ -555,15 +575,10 @@ const SignupForm = ({ setIsLoggedIn }) => {
                                 placeholder='Confirm Password'
 
                                 {...register("confirmPassword", {
-                                    required: true,
-                                    pattern: {
-                                        value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-                                        message: "Password must contains Uppercase, Lowercase, Digit, Symbol"
-                                    },
-                                    minLength: {
-                                        value: 8,
-                                        message: "Password should be greater than 8"
-                                    }
+                                    required: "Confirm Password is required",
+                                    validate: value =>
+                                        value === password ||
+                                        "Passwords do not match"
                                 })}
 
                                 className='
@@ -593,7 +608,8 @@ const SignupForm = ({ setIsLoggedIn }) => {
                                 '
                             />
 
-                            <span
+                            <button
+                                type='button'
                                 onClick={() => setConfirmPassword((prev) => !prev)}
 
                                 className='
@@ -613,7 +629,7 @@ const SignupForm = ({ setIsLoggedIn }) => {
                                         : (<AiOutlineEye fontSize={24} fill='#5f6c8d' />)
                                 }
 
-                            </span>
+                            </button>
 
                         </div>
 
@@ -637,7 +653,8 @@ const SignupForm = ({ setIsLoggedIn }) => {
                     <label className='
                     text-[#07122b]
                     font-semibold
-                    text-lg
+                    text-base
+                    sm:text-lg
                     '>
                         University
                     </label>
@@ -647,7 +664,7 @@ const SignupForm = ({ setIsLoggedIn }) => {
                         placeholder='Dr. A.P.J. Abdul Kalam Technical University, Lucknow'
 
                         {...register("university", {
-                            required: true,
+                            required: "University is required"
                         })}
 
                         className='
@@ -715,6 +732,8 @@ const SignupForm = ({ setIsLoggedIn }) => {
                     hover:shadow-[0_0_50px_rgba(39,199,184,0.25)]
 
                     transition-all duration-300
+                    disabled:opacity-50
+                    disabled:cursor-not-allowed
                     '
                 >
 

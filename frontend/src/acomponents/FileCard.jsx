@@ -48,39 +48,22 @@
 
 
 
-import React, { useEffect, useState } from 'react';
-import { FileText, Upload, X } from "lucide-react";
+import React from 'react';
+import { X } from "lucide-react";
 
 const FileCard = ({ file, id, deleteFile }) => {
 
-    const [progress, setProgress] = useState(0);
-
-    useEffect(() => {
-
-        const interval = setInterval(() => {
-
-            setProgress((prev) => {
-
-                if (prev >= 100) {
-                    clearInterval(interval);
-                    return 100;
-                }
-
-                return prev + 10;
-
-            });
-
-        }, 300);
-
-        return () => clearInterval(interval);
-
-    }, [file]);
+    const fileSize =
+        file.size > 1024 * 1024
+            ? `${(file.size / (1024 * 1024)).toFixed(2)} MB`
+            : `${(file.size / 1024).toFixed(1)} KB`;
 
     return (
 
         <div
         className="
-        w-[260px]
+        w-full
+        sm:w-[260px]
 
         bg-white/80
         backdrop-blur-xl
@@ -115,21 +98,20 @@ const FileCard = ({ file, id, deleteFile }) => {
                     flex items-center justify-center
                     "
                 >
-                    <FileText
-                        size={20}
-                        className="text-[#27c7b8]"
-                    />
+                    <span className="text-xs bg-red-100 px-2 py-1 rounded">PDF</span>
                 </div>
 
                 <div>
 
                     <h3
+                        title={file.name}
                         className="
                         text-sm
                         font-semibold
                         text-[#07122b]
 
-                        max-w-[140px]
+                        max-w-[180px]
+                        sm:max-w-[140px]
 
                         truncate
                         "
@@ -138,7 +120,7 @@ const FileCard = ({ file, id, deleteFile }) => {
                     </h3>
 
                     <p className="text-xs text-[#5f6c8d]">
-                        {(file.size / 1024).toFixed(1)} KB
+                        {fileSize}
                     </p>
 
                 </div>
@@ -163,27 +145,8 @@ const FileCard = ({ file, id, deleteFile }) => {
         {/* Progress */}
         <div className="mt-4">
 
-            <div className="h-2 rounded-full bg-[#e9fbf8] overflow-hidden">
-
-                <div
-                    className="
-                    h-full
-                    bg-[#27c7b8]
-
-                    transition-all
-                    duration-300
-                    "
-                    style={{
-                        width: `${progress}%`
-                    }}
-                />
-
-            </div>
-
-            <p className="text-xs mt-2 text-[#5f6c8d]">
-                {
-                    progress === 100 ? "Uploaded" : `Uploading... ${progress}%` 
-                }
+            <p className="text-xs font-medium text-green-600">
+                Ready for Analysis
             </p>
 
         </div>

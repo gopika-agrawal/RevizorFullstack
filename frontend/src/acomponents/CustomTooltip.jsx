@@ -19,9 +19,8 @@ const CustomTooltip = ({
           {data.unit}
         </h3>
 
-        <p>
-          Questions:
-          {data.questionCount}
+        <p className="font-semibold text-[#27c7b8]">
+          Questions: {data.questionCount}
         </p>
 
         <div className="mt-2">

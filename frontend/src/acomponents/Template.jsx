@@ -95,11 +95,16 @@ const Template = ({ formType, setIsLoggedIn }) => {
         overflow-hidden
         '>
 
-            <div className='grid lg:grid-cols-2 items-center min-h-[750px]'>
+            <div className='grid lg:grid-cols-2 items-center min-h-[650px] lg:min-h-[750px]'>
 
                 {/* LEFT SIDE */}
                 <div className='
-                px-10 md:px-16 py-16
+                px-6
+                sm:px-10
+                md:px-16
+
+                py-10
+                sm:py-16
 
                 flex flex-col justify-center
                 '>
@@ -148,7 +153,9 @@ const Template = ({ formType, setIsLoggedIn }) => {
                     <div className='mb-10'>
 
                         <h1 className='
-                        text-5xl md:text-6xl
+                        text-4xl
+                        sm:text-5xl
+                        md:text-6xl
 
                         font-black
 

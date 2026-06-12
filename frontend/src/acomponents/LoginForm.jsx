@@ -126,20 +126,26 @@ const LoginForm = ({ setIsLoggedIn }) => {
                 },
                 body: JSON.stringify(data)
             });
+            if(!response.ok){
+
+                toast.error(
+                    "Invalid email or password"
+                );
+
+                return;
+            }
             // console.log(response);
             // console.log(response.headers.get("content-type"));
             const result = await response.json();
             console.log(result);
             if(result.message === "Login successful"){
+                toast.success("Login successful");
                 setIsLoggedIn(true);
                 localStorage.setItem("isLoggedIn", "true");
                 navigate("/home");
-                console.log(result);
                 localStorage.setItem("hasVisited", "true");
                 localStorage.setItem("userId", result.userId);
                 localStorage.setItem("university", result.university);
-                console.log("Userid:", result.userId);
-                console.log("Uni:", result.university);
             }
             else{
                 toast.error("Invalid email or password");
@@ -148,6 +154,10 @@ const LoginForm = ({ setIsLoggedIn }) => {
         }
         catch(error){
             console.error(error);
+
+            toast.error(
+                "Unable to connect to server"
+            );
         }
     }
 
@@ -227,7 +237,8 @@ const LoginForm = ({ setIsLoggedIn }) => {
                     <label className='
                     text-[#07122b]
                     font-semibold
-                    text-lg
+                    text-base
+                    sm:text-lg
                     '>
                         Password
                     </label>
@@ -239,15 +250,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
                             placeholder='Enter Password'
 
                             {...register("password", {
-                                required: true,
-                                pattern: {
-                                    value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-                                    message: "Password must contains Uppercase, Lowercase, Digit, Symbol"
-                                },
-                                minLength: {
-                                    value: 8,
-                                    message: "Password should be greater than 8"
-                                }
+                                required: "Password is required"
                             })}
 
                             className='
@@ -277,7 +280,8 @@ const LoginForm = ({ setIsLoggedIn }) => {
                             '
                         />
 
-                        <span
+                        <button
+                            type='button'
                             onClick={() => setShowPassword((prev) => !prev)}
                             className='
                             absolute
@@ -296,7 +300,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
                                     : (<AiOutlineEye fontSize={24} fill='#5f6c8d' />)
                             }
 
-                        </span>
+                        </button>
 
                     </div>
 

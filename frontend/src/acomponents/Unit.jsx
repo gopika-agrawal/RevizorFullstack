@@ -1,13 +1,40 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import UnitChart from './UnitChart';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const Unit = () => {
 
-    const [ unitAnalysis, setUnitAnalysis ] = useState([]);
-
+    const [unitAnalysis, setUnitAnalysis] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    const navigate = useNavigate();
+
     useEffect(() => {
+
+        const userId =
+            localStorage.getItem("userId");
+
+        if (!userId) {
+
+            toast.error(
+                "Session expired. Please login again."
+            );
+
+            navigate("/login");
+
+            return;
+        }
+
+        const timeout = setTimeout(() => {
+
+            setLoading(false);
+
+            toast.error(
+                "Unable to load insights"
+            );
+
+        }, 15000);
 
         const interval = setInterval(() => {
 
@@ -21,23 +48,48 @@ const Unit = () => {
 
                 if (data.unitAnalysis) {
 
-                    setUnitAnalysis(
-                        JSON.parse(
-                            data.unitAnalysis
-                        )
-                    );
+                    try {
 
-                    setLoading(false);
+                        setUnitAnalysis(
+                            JSON.parse(
+                                data.unitAnalysis
+                            )
+                        );
 
-                    clearInterval(interval);
+                        setLoading(false);
+
+                        clearInterval(interval);
+
+                        clearTimeout(timeout);
+
+                    } catch (error) {
+
+                        console.error(error);
+
+                        toast.error(
+                            "Failed to load unit analysis"
+                        );
+
+                        setLoading(false);
+
+                        clearInterval(interval);
+
+                        clearTimeout(timeout);
+                    }
                 }
             }
 
         }, 1000);
 
-        return () => clearInterval(interval);
+        return () => {
 
-    }, []);
+            clearInterval(interval);
+
+            clearTimeout(timeout);
+
+        };
+
+    }, [navigate]);
 
     if (loading) {
 
@@ -58,70 +110,187 @@ const Unit = () => {
                 />
 
                 <p className="mt-4 text-xl font-semibold">
-
                     Generating Insights...
-
                 </p>
 
                 <p className="text-gray-500 mt-2">
-
                     Analyzing previous year papers
-
                 </p>
 
             </div>
         );
     }
 
+    if (unitAnalysis.length === 0) {
 
-    const totalQuestions = unitAnalysis.reduce((sum, item) => sum + item.questionCount,0);
+        return (
 
-    const mostAsked = [...unitAnalysis].sort((a, b) => b.questionCount - a.questionCount)[0];
+            <div className="flex justify-center items-center h-[60vh]">
 
-    const leastAsked = [...unitAnalysis].sort((a, b) => a.questionCount - b.questionCount)[0];
+                <div className="text-center">
 
-    const chartData = [...unitAnalysis].sort((a, b) => b.questionCount - a.questionCount);
+                    <h2 className="text-2xl font-bold text-[#07122b]">
+                        No Unit Analysis Available
+                    </h2>
 
-  return (
-    <div className="w-full flex flex-col items-center">
+                    <p className="text-gray-500 mt-2">
+                        Please generate insights first.
+                    </p>
 
-    <h1 className="text-3xl font-bold mb-6 text-[#07122b]">
-      Unit Weightage Analysis
-    </h1>
+                </div>
 
-    <div className="grid grid-cols-3 gap-6 mb-8">
+            </div>
+        );
+    }
 
-      <div className="bg-white rounded-2xl p-6 shadow">
-        <h3>Total Questions</h3>
-        <p className="text-3xl font-bold">
-          {totalQuestions}
-        </p>
-      </div>
+    const totalQuestions =
+        unitAnalysis.reduce(
+            (sum, item) =>
+                sum + item.questionCount,
+            0
+        );
 
-      <div className="bg-white rounded-2xl p-6 shadow">
-        <h3>Most Important Unit</h3>
-        <p className="text-xl font-bold">
-          {mostAsked?.unit}
-        </p>
-      </div>
+    const mostAsked =
+        [...unitAnalysis]
+            .sort(
+                (a, b) =>
+                    b.questionCount -
+                    a.questionCount
+            )[0];
 
-      <div className="bg-white rounded-2xl p-6 shadow">
-        <h3>Least Important Unit</h3>
-        <p className="text-xl font-bold">
-          {leastAsked?.unit}
-        </p>
-      </div>
+    const leastAsked =
+        [...unitAnalysis]
+            .sort(
+                (a, b) =>
+                    a.questionCount -
+                    b.questionCount
+            )[0];
 
-    </div>
+    const chartData =
+        [...unitAnalysis]
+            .sort(
+                (a, b) =>
+                    b.questionCount -
+                    a.questionCount
+            );
 
-    <div className="w-[90%] max-w-6xl">
+    return (
 
-      <UnitChart unitAnalysis={chartData} />
+        <div className="w-full flex flex-col items-center">
 
-    </div>
+            <h1
+                className="
+                text-2xl
+                sm:text-3xl
+                font-bold
+                mb-6
+                text-[#07122b]
+                text-center
+                "
+            >
+                Unit Weightage Analysis
+            </h1>
 
-  </div>
-  )
-}
+            <div
+                className="
+                grid
+                grid-cols-1
+                md:grid-cols-3
+                gap-6
+                mb-8
+                w-[95%]
+                md:w-auto
+                "
+            >
 
-export default Unit
+                <div
+                    className="
+                    bg-white
+                    rounded-2xl
+                    p-4
+                    sm:p-6
+                    shadow
+                    "
+                >
+                    <h3 className="text-gray-600">
+                        Total Questions
+                    </h3>
+
+                    <p
+                        className="
+                        text-3xl
+                        font-bold
+                        text-[#07122b]
+                        "
+                    >
+                        {totalQuestions}
+                    </p>
+                </div>
+
+                <div
+                    className="
+                    bg-white
+                    rounded-2xl
+                    p-4
+                    sm:p-6
+                    shadow
+                    "
+                >
+                    <h3 className="text-gray-600">
+                        Most Important Unit
+                    </h3>
+
+                    <p
+                        className="
+                        text-xl
+                        font-bold
+                        text-[#07122b]
+                        "
+                    >
+                        {mostAsked?.unit}
+                    </p>
+                </div>
+
+                <div
+                    className="
+                    bg-white
+                    rounded-2xl
+                    p-4
+                    sm:p-6
+                    shadow
+                    "
+                >
+                    <h3 className="text-gray-600">
+                        Least Important Unit
+                    </h3>
+
+                    <p
+                        className="
+                        text-xl
+                        font-bold
+                        text-[#07122b]
+                        "
+                    >
+                        {leastAsked?.unit}
+                    </p>
+                </div>
+
+            </div>
+
+            <div
+                className="
+                w-[95%]
+                md:w-[90%]
+                max-w-6xl
+                "
+            >
+                <UnitChart
+                    unitAnalysis={chartData}
+                />
+            </div>
+
+        </div>
+    );
+};
+
+export default Unit;

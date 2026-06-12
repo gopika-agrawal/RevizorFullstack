@@ -3,13 +3,11 @@ import React from 'react'
 
 const Signup = ({setIsLoggedIn}) => {
   return (
-    <div>
-        <Template 
-            formType="signup"
-            setIsLoggedIn={setIsLoggedIn}
-        />
-    </div>
-  )
+      <Template 
+          formType="signup"
+          setIsLoggedIn={setIsLoggedIn}
+      />
+  );
 }
 
 export default Signup

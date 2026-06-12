@@ -11,18 +11,23 @@ import {
 import CustomTooltip from "./CustomTooltip";
 
 const UnitChart = ({ unitAnalysis }) => {
-  return (
-    <div className="w-full h-[450px] bg-white rounded-xl shadow-md p-4">
 
-      <ResponsiveContainer width="100%" height={500}>
+  if(!unitAnalysis?.length){
+    return null;
+  }
+
+  return (
+    <div className="w-full h-[500px] md:h-[450px] bg-white rounded-xl shadow-md p-4">
+
+      <ResponsiveContainer width="100%" height="100%">
 
         <BarChart
           data={unitAnalysis}
           layout="vertical"
           margin={{
             top: 20,
-            right: 40,
-            left: 120,
+            right: 20,
+            left: 80,
             bottom: 20
           }}
         >
@@ -36,10 +41,11 @@ const UnitChart = ({ unitAnalysis }) => {
           <YAxis
             dataKey="unit"
             type="category"
-            width={100}
+            width={140}
           />
 
           <Tooltip
+            cursor={{fill: "#f8fffe"}}
             content={<CustomTooltip/>}
           />
 
@@ -47,11 +53,13 @@ const UnitChart = ({ unitAnalysis }) => {
             dataKey="questionCount"
             fill="#27c7b8"
             radius={[0, 8, 8, 0]}
-          />
-          <LabelList
-            dataKey="questionCount"
-            position="right"
-          />
+          >
+            <LabelList
+              dataKey="questionCount"
+              position="right"
+              fontSize={12}
+            />
+          </Bar>
         </BarChart>
 
       </ResponsiveContainer>

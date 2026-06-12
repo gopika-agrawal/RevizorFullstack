@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import Navbar from './acomponents/Navbar'
 import './App.css'
-// import Home from './Pages/Home'
 import Login from './Pages/Login'
 import Signup from './Pages/Signup'
 import { useState } from 'react'
@@ -28,23 +27,46 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/home" element={
-            <PrivateRoute isLoggedIn={isLoggedIn}>
+            <PrivateRoute>
               <Home/>
             </PrivateRoute>
           } />
-          <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn}/>} />
-          <Route path="/signup" element={<Signup setIsLoggedIn={setIsLoggedIn}/>} />
+          <Route
+            path="/login"
+            element={
+              isLoggedIn
+                ? <Navigate to="/home" replace />
+                : <Login setIsLoggedIn={setIsLoggedIn}/>
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              isLoggedIn
+                ? <Navigate to="/home" replace />
+                : <Signup setIsLoggedIn={setIsLoggedIn}/>
+            }
+          />
           <Route path='/dashboard/*' element={
-            <PrivateRoute isLoggedIn={isLoggedIn}>
+            <PrivateRoute>
             <Dashboard/>
             </PrivateRoute>
           } />
+          <Route
+            path="*"
+            element={
+              <Navigate
+                to="/"
+                replace
+              />
+            }
+          />
         </Routes>
 
        </main>
 
 
-        <footer className='flex justify-center items-center gap-4 bg-white/70 backdrop-blur-xl border border-[#dfeceb] rounded-full px-6 py-3 w-full shadow-[0_8px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_0_40px_rgba(39,199,184,0.20)] hover:-translate-y-1 transition-all duration-300'>
+        <footer className='flex flex-col sm:flex-row justify-center items-center gap-4 bg-white/70 backdrop-blur-xl border border-[#dfeceb] rounded-full px-6 py-3 w-full shadow-[0_8px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_0_40px_rgba(39,199,184,0.20)] hover:-translate-y-1 transition-all duration-300'>
           
           <p className='text-[#07122b] font-semibold tracking-wide text-sm md:text-base'>
             Simplifying the Complexity

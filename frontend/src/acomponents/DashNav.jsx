@@ -9,46 +9,48 @@ const DashNav = () => {
     "bg-[#27c7b8] text-white shadow-lg";
 
   const inactive =
-    "bg-white text-[#07122b] border border-[#dfeceb]";
+    "bg-white text-[#07122b] border border-[#dfeceb] hover:bg-[#f5fbfa]";
 
   return (
-    <div className="flex justify-center mt-8 mb-8">
+    <div className="flex flex-wrap justify-center gap-4">
 
-      <div className="flex gap-4 bg-white rounded-2xl p-3 shadow-md">
+      <div className="flex flex-wrap justify-center gap-3 bg-white rounded-2xl p-3 shadow-md">
 
         <Link to="/dashboard/unit">
           <Button
-            className={
-              location.pathname.includes("/unit")
+            className={`
+              ${location.pathname === "/dashboard/unit"
                 ? active
                 : inactive
-            }
+                }
+                text-xs sm:text-sm md:text-base
+            `}
           >
-            Unit Weightage
+            📊 Unit Weightage
           </Button>
         </Link>
 
         <Link to="/dashboard/frequency">
           <Button
             className={
-              location.pathname.includes("/frequency")
+              location.pathname === "/dashboard/frequency"
                 ? active
                 : inactive
             }
           >
-            Frequency Analysis
+            🔥Frequency Analysis
           </Button>
         </Link>
 
         <Link to="/dashboard/answer">
           <Button
             className={
-              location.pathname.includes("/answer")
+              location.pathname === "/dashboard/answer"
                 ? active
                 : inactive
             }
           >
-            Answer PDF
+            📄Answer PDF
           </Button>
         </Link>
 

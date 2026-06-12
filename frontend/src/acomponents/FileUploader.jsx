@@ -54,6 +54,8 @@
 import React, { useState, useEffect } from 'react';
 import FileCard from './FileCard';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 const FileUploader = () => {
 
@@ -64,19 +66,53 @@ const FileUploader = () => {
 
     const navigate = useNavigate();
 
-        useEffect(() => {
-            console.log(selectedFile);
-        });
-    
-
     const changeHandler = (event) => {
-        const newFile = Array.from(event.target.files).map(file => ({
-            id: crypto.randomUUID(),
-            file
-        }));
-        setSelectedFile((prev) => [...prev, ...newFile]);
-        
-    }
+
+        const existingNames =
+            selectedFile.map(
+                item => item.file.name
+            );
+
+        const newFiles = Array.from(event.target.files)
+            .filter(file => {
+
+                if (
+                    file.type !==
+                    "application/pdf"
+                ) {
+
+                    toast.error(
+                        `${file.name} is not a PDF`
+                    );
+
+                    return false;
+                }
+
+                if (
+                    existingNames.includes(
+                        file.name
+                    )
+                ) {
+
+                    toast.warning(
+                        `${file.name} already selected`
+                    );
+
+                    return false;
+                }
+
+                return true;
+            })
+            .map(file => ({
+                id: crypto.randomUUID(),
+                file
+            }));
+
+        setSelectedFile(prev => [
+            ...prev,
+            ...newFiles
+        ]);
+    };
 
     function deleteFile(id){
        setSelectedFile(prev => prev.filter(item => item.id !== id));
@@ -92,7 +128,22 @@ const FileUploader = () => {
             selectedFile.forEach((item) => {
                 formData.append("files", item.file);
             });
+            if(selectedFile.length === 0){
+                toast.error(
+                    "Please select at least one PDF"
+                );
+                return;
+            }
             const id = localStorage.getItem("userId");
+            if (!id) {
+                toast.error(
+                    "Session expired. Please login again."
+                );
+
+                navigate("/login");
+
+                return;
+            }
             console.log("Sending request with userId:", id);
 
             const url = `http://localhost:8080/api/upload/${id}`;
@@ -103,6 +154,11 @@ const FileUploader = () => {
                 // content: "application/json",
                 body: formData
             });
+
+            if(!response.ok){
+                throw new Error("Upload failed");
+            }
+
             const data = await response.json();
 
             localStorage.removeItem("dashboardData");
@@ -111,16 +167,25 @@ const FileUploader = () => {
 
             const dashboardResponse = await fetch(`http://localhost:8080/api/dashboard/${id}`);
 
+            if (!dashboardResponse.ok) {
+                throw new Error(
+                    "Failed to generate dashboard"
+                );
+            }
+
             const dashboardData = await dashboardResponse.json();
 
             localStorage.setItem("dashboardData",JSON.stringify(dashboardData));
-            
-            
+            toast.success("Insights generated successfully");
             console.log(data);
 
         }
         catch(error){
-            console.log(error);
+            console.error(error);
+
+            toast.error(
+                "Failed to generate insights"
+            );
         }
         finally{
             setLoading(false);
@@ -132,7 +197,7 @@ const FileUploader = () => {
         <div className="space-y-8">
 
         <div>
-            <h1 className="text-4xl md:text-5xl font-black text-[#07122b]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#07122b]">
                 Upload Your PDFs
             </h1>
 
@@ -152,7 +217,9 @@ const FileUploader = () => {
 
             bg-white/70
 
-            p-12
+            p-6
+            sm:p-8
+            md:p-12
 
             text-center
 
@@ -193,7 +260,9 @@ const FileUploader = () => {
             ))}
         </div>
 
-
+        <p className="text-sm text-[#5f6c8d]">
+            {selectedFile.length} files selected
+        </p>
 
         <button
             onClick={generateInsights}
