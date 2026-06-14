@@ -1,21 +1,14 @@
 package com.example.backend.revizor.service;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-
-import com.google.genai.Client;
-import com.google.genai.types.GenerateContentResponse;
 
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class AnalysisService {
+public class FrequencyAnalysisService {
 
   private final GroqService groqService;
-
-  @Value("${groq.api.key}")
-  private String apiKey;
 
   public String analyzeQuestions(String questionJson) throws Exception {
 

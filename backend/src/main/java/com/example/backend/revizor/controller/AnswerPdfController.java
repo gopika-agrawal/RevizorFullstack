@@ -12,29 +12,25 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.backend.revizor.dto.AnswerPdfDto;
 import com.example.backend.revizor.service.AnswerGenerationService;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/answer")
 @RequiredArgsConstructor
 @CrossOrigin(origins = "http://localhost:5173")
-public class GeneratePdf {
+public class AnswerPdfController {
 
     private final AnswerGenerationService answerGenerationService;
 
     @PostMapping("/pdf")
-    public ResponseEntity<byte[]> generatePdf(@RequestBody AnswerPdfDto answerPdfDto) throws Exception{
-
-
-        System.out.println("ANSWER PDF CONTROLLER HIT");
+    public ResponseEntity<byte[]> generatePdf(@RequestBody @Valid AnswerPdfDto answerPdfDto) throws Exception{
         
         String university = answerPdfDto.getUniversity();
 
         String frequencyJson = answerPdfDto.getFrequencyJson();
         
         byte[] pdf = answerGenerationService.generateAnswers(university, frequencyJson);
-
-        System.out.println("Pdf Generated Successfully");
 
         return ResponseEntity.ok()
                             .header(HttpHeaders.CONTENT_DISPOSITION,

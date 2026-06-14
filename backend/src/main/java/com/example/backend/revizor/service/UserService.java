@@ -1,10 +1,12 @@
 package com.example.backend.revizor.service;
 
 import org.springframework.stereotype.Service;
-import java.util.List;
 
+import com.example.backend.revizor.dto.SignupDto;
 import com.example.backend.revizor.dto.UserDto;
 import com.example.backend.revizor.entity.Users;
+import com.example.backend.revizor.exception.InvalidCredentialsException;
+import com.example.backend.revizor.exception.UserAlreadyExistsException;
 import com.example.backend.revizor.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -15,16 +17,23 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    public List<Users> getAllUsers() {
-        return userRepository.findAll();
-    }
-
-    public Users createUser(Users user) {
+    public Users createUser(SignupDto dto) {
         
-        if (userRepository.findByEmail(user.getEmail()) != null) {
-            throw new RuntimeException(
+        Users existingUser = userRepository.findByEmail(dto.getEmail());
+
+        if (existingUser != null) {
+
+            throw new UserAlreadyExistsException(
                     "Email already registered");
         }
+
+        Users user = Users.builder()
+                        .firstName(dto.getFirstName())
+                        .lastName(dto.getLastName())
+                        .email(dto.getEmail())
+                        .password(dto.getPassword())
+                        .university(dto.getUniversity())
+                        .build();
 
         return userRepository.save(user);
 
@@ -34,37 +43,14 @@ public class UserService {
 
         Users user = userRepository.findByEmail(userDto.getEmail());
 
-        if (user != null && user.getPassword().equals(userDto.getPassword())) {
-            return user;
+        if (user == null || !user.getPassword().equals(userDto.getPassword())) {
+
+            throw new InvalidCredentialsException(
+                    "Invalid email or password");
         }
 
-        return null;
+        return user;
 
     }
 
-    // public String loginUser(UserDto userDto){
-
-    // Users user = userRepository.findByEmail(userDto.getEmail());
-
-    // System.out.println("User found: " + user);
-
-    // if(user == null){
-    // System.out.println("User is null");
-    // return "Invalid email or password";
-    // }
-
-    // System.out.println("DB Password = " + user.getPassword());
-    // System.out.println("Entered Password = " + userDto.getPassword());
-
-    // boolean match = user.getPassword().equals(userDto.getPassword());
-
-    // System.out.println("Password Match = " + match);
-
-    // if(match){
-    // System.out.println("Inside Success Block");
-    // return user.getId().toString();
-    // }
-
-    // return "Invalid email or password";
-    // }
 }

@@ -2,22 +2,15 @@ package com.example.backend.revizor.service;
 
 import org.springframework.stereotype.Service;
 
-import org.springframework.beans.factory.annotation.Value;
-import com.google.genai.Client;
-import com.google.genai.types.GenerateContentResponse;
-
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class UnitAnanlysisService {
+public class UnitAnalysisService {
 
     private final GroqService groqService;
 
-    @Value("${groq.api.key}")
-    private String apiKey;
-
-    public String analysisUnits(String university, String questionJson) throws Exception {
+    public String generateUnitAnalysis(String university, String questionJson) throws Exception {
 
         String prompt = """
                 You are an expert university syllabus analyzer.

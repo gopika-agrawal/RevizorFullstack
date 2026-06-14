@@ -7,16 +7,13 @@ import com.example.backend.revizor.service.UserService;
 
 import jakarta.validation.Valid;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.example.backend.revizor.dto.AuthResponseDto;
+import com.example.backend.revizor.dto.SignupDto;
 import com.example.backend.revizor.dto.UserDto;
 import com.example.backend.revizor.entity.Users;
 
@@ -30,40 +27,19 @@ public class UserController {
 
     private final UserService userService;
 
-    @GetMapping
-    public List<Users> getAllUsers() {
-        return userService.getAllUsers();
-    }
-
     @PostMapping
-    public ResponseEntity<Map<String,String>> createUser(@RequestBody @Valid Users user) {
-        Users savedUser = userService.createUser(user);
+    public ResponseEntity<AuthResponseDto> createUser(@RequestBody @Valid SignupDto dto) {
+        Users savedUser = userService.createUser(dto);
 
-        return ResponseEntity.ok(
-                Map.of(
-                        "message",
-                        "Signup successful",
-
-                        "userId",
-                        savedUser.getId().toString(),
-
-                        "university",
-                        savedUser.getUniversity()));
+        return ResponseEntity.ok(new AuthResponseDto("Signup successful", savedUser.getId(), savedUser.getUniversity()));
     }
 
     @PostMapping("/login")
-    public ResponseEntity<Map<String, String>> logInUser(@RequestBody @Valid UserDto userDto) {
+    public ResponseEntity<AuthResponseDto> logInUser(@RequestBody @Valid UserDto userDto) {
 
         Users user = userService.loginUser(userDto);
 
-        if (user == null) {
-            return ResponseEntity.status(401).body(Map.of("message", "Invalid email or password"));
-        }
-
-        return ResponseEntity.ok(Map.of(
-                "message", "Login successful",
-                "userId", user.getId().toString(),
-                "university", user.getUniversity()));
+        return ResponseEntity.ok(new AuthResponseDto("Login successful", user.getId(), user.getUniversity()));
     }
 
 }
