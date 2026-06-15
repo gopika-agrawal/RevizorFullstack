@@ -39,14 +39,23 @@ const AnswerPdf = () => {
         return;
       }
 
-      const university =
-        localStorage.getItem("university");
-      
+      const university = localStorage.getItem("university");
+
+      const subject = localStorage.getItem("subject");
+
       if(!university){
         toast.error("Session expired. Please login again.");
         navigate("/login");
         return;
       }
+
+      if(!subject){
+        toast.error("Please enter subject name");
+        return;
+      }
+
+      console.log(typeof frequencyData);
+      console.log(frequencyData);
 
       const response = await fetch(
         "http://localhost:8080/api/answer/pdf",
@@ -57,6 +66,7 @@ const AnswerPdf = () => {
           },
           body: JSON.stringify({
             university,
+            subject,
             frequencyJson: JSON.stringify(
               frequencyData
             )

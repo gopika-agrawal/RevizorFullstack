@@ -7,6 +7,8 @@ import com.example.backend.revizor.service.UserService;
 
 import jakarta.validation.Valid;
 
+import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,8 +19,13 @@ import com.example.backend.revizor.dto.SignupDto;
 import com.example.backend.revizor.dto.UserDto;
 import com.example.backend.revizor.entity.Users;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 import lombok.RequiredArgsConstructor;
 
+@Slf4j
+@Tag(name = "User APIs", description = "User Registration and Authentication")
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
@@ -27,17 +34,30 @@ public class UserController {
 
     private final UserService userService;
 
+    @Operation(summary = "Register User", description = "Creates a new user account")
     @PostMapping
     public ResponseEntity<AuthResponseDto> createUser(@RequestBody @Valid SignupDto dto) {
+
+        log.info("Signup request received for email: {}", dto.getEmail());
+
         Users savedUser = userService.createUser(dto);
 
-        return ResponseEntity.ok(new AuthResponseDto("Signup successful", savedUser.getId(), savedUser.getUniversity()));
+        log.info("User registered successfully: {}", dto.getEmail());
+        
+        return ResponseEntity
+                .ok(new AuthResponseDto("Signup successful", savedUser.getId(), savedUser.getUniversity()));
+    
     }
 
+    @Operation(summary = "Login User", description = "Authenticates user using email and password")
     @PostMapping("/login")
     public ResponseEntity<AuthResponseDto> logInUser(@RequestBody @Valid UserDto userDto) {
 
+        log.info("Login attempt for email: {}", userDto.getEmail());
+
         Users user = userService.loginUser(userDto);
+
+        log.info("Login successful for email: {}", userDto.getEmail());
 
         return ResponseEntity.ok(new AuthResponseDto("Login successful", user.getId(), user.getUniversity()));
     }

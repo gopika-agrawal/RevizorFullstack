@@ -15,7 +15,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Value;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class GroqService {
@@ -80,8 +82,7 @@ public class GroqService {
                 %s
                 """.formatted(rawText);
 
-        
-        System.out.println(apiKey);
+        log.info("Sending request to Groq model");
 
         String response = ask(prompt);
 
@@ -102,6 +103,8 @@ public class GroqService {
         Map<String,Object> requestBody = new HashMap<>();
 
         requestBody.put("temperature",0);
+
+        log.debug("Model used: {}", "llama-3.3-70b-versatile");
         
         requestBody.put("model", "llama-3.3-70b-versatile");
 
@@ -111,7 +114,7 @@ public class GroqService {
 
         String response = restTemplate.postForObject("https://api.groq.com/openai/v1/chat/completions", entity, String.class);
 
-        System.out.println(response);
+        log.info("Groq response received");
 
         GroqResponseDto dto = new ObjectMapper().readValue(response, GroqResponseDto.class);
 

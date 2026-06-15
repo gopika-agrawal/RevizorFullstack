@@ -62,8 +62,9 @@ const FileUploader = () => {
     const [selectedFile, setSelectedFile] = useState([]);
 
     const [loading, setLoading] = useState(false);
-    
 
+    const [subject, setSubject] = useState("");
+    
     const navigate = useNavigate();
 
     const changeHandler = (event) => {
@@ -124,10 +125,20 @@ const FileUploader = () => {
         setLoading(true);
         try{
 
+            if(!subject.trim()){
+                toast.error(
+                    "Please enter subject name"
+                );
+                return;
+            }
+
             const formData = new FormData();
             selectedFile.forEach((item) => {
                 formData.append("files", item.file);
             });
+
+            formData.append("subject",subject);
+
             if(selectedFile.length === 0){
                 toast.error(
                     "Please select at least one PDF"
@@ -176,6 +187,7 @@ const FileUploader = () => {
             const dashboardData = await dashboardResponse.json();
 
             localStorage.setItem("dashboardData",JSON.stringify(dashboardData));
+            localStorage.setItem("subject",subject);
             toast.success("Insights generated successfully");
             console.log(data);
 
@@ -204,6 +216,30 @@ const FileUploader = () => {
             <p className="text-[#5f6c8d] mt-4">
                 Analyze previous year papers and generate exam insights.
             </p>
+        </div>
+
+        <div className="space-y-2">
+            <label className="font-semibold text-[#07122b]">
+                Subject Name
+            </label>
+
+            <input
+                type="text"
+                value={subject}
+                onChange={(e) =>
+                    setSubject(e.target.value)
+                }
+                placeholder="Enter Subject Name (e.g. DBMS)"
+                className="
+                    w-full
+                    p-4
+                    rounded-xl
+                    border
+                    border-[#dfeceb]
+                    outline-none
+                    focus:border-[#27c7b8]
+                "
+            />
         </div>
 
         <label

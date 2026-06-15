@@ -3,7 +3,9 @@ package com.example.backend.revizor.service;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class UnitAnalysisService {
@@ -11,6 +13,8 @@ public class UnitAnalysisService {
     private final GroqService groqService;
 
     public String generateUnitAnalysis(String university, String questionJson) throws Exception {
+
+        log.info("Starting unit analysis for university: {}", university);
 
         String prompt = """
                 You are an expert university syllabus analyzer.

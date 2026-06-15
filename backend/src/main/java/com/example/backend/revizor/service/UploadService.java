@@ -24,7 +24,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class UploadService {
@@ -32,7 +34,6 @@ public class UploadService {
     private final PdfService pdfService;
     private final UploadFileRepository uploadFileRepository;
     private final GroqService groqService;
-    private final ObjectMapper objectMapper;
     private final QuestionRepository questionRepository;
     private final UserRepository userRepository;
 
@@ -46,7 +47,7 @@ public class UploadService {
     }
 
     @Transactional
-    public void processFiles(Long id, List<MultipartFile> files) throws Exception {
+    public void processFiles(Long id, List<MultipartFile> files, String subject) throws Exception {
 
         if(files == null || files.isEmpty()){
             throw new FileProcessingException("Please upload at least one PDF");
@@ -62,6 +63,8 @@ public class UploadService {
 
         for (MultipartFile file : files) {
 
+            log.debug("Processing file: {}", file.getOriginalFilename());
+
             if(!"application/pdf".equals(file.getContentType())){
                 throw new FileProcessingException("Only PDF files are allowed");
             }
@@ -69,6 +72,8 @@ public class UploadService {
             String year = extractYear(file.getOriginalFilename());
 
             String text = pdfService.extractText(file);
+
+            log.warn("Skipping scanned PDF: {}", file.getOriginalFilename());
 
             if (text == null || text.trim().isEmpty()) {
                 System.out.println(
@@ -93,25 +98,24 @@ public class UploadService {
 
         }
 
-        System.out.println("Input Length = " + allText.length());
-
-        System.out.println("Extracted Text: " + allText.toString());
-
         // String geminiResponse = geminiService.extractQuestions(allText.toString());
 
+        log.info("Sending extracted text to Groq");
+        
         String groqResponse = groqService.extractQuestions(allText.toString());
 
         if(groqResponse == null || groqResponse.isBlank()){
             throw new FileProcessingException("Failed to process PDF");
         }
 
+        log.info("Questions extracted successfully");
 
         String cleanedResponse = groqResponse
                 .replace("```json", "")
                 .replace("```", "")
                 .trim();
 
-        System.out.println("Cleaned Gemini Response: " + cleanedResponse);
+        ObjectMapper objectMapper = new ObjectMapper();
 
         PaperResponseDto extraction = objectMapper.readValue(cleanedResponse, PaperResponseDto.class);
 
@@ -121,7 +125,7 @@ public class UploadService {
                                     .fileName("Combined Upload")
                                     .rawText(allText.toString())
                                     .year(paper.getYear())
-                                    .subject("Unknown Subject")
+                                    .subject(subject)
                                     .user(user)
                                     .build();
             uploadFileRepository.save(uploadFile);
@@ -137,6 +141,8 @@ public class UploadService {
         }
 
         Map<String, String> response = new HashMap<>();
+
+        log.info("Upload process completed for userId {}", id);
 
         response.put("message", "Files uploaded successfully");
 

@@ -9,6 +9,7 @@ import Dashboard from './Pages/Dashboard'
 import LandingPage from './Pages/LandingPage'
 import { SwatchBook } from 'lucide-react'
 import Home from './Pages/Home'
+import { Navigate } from 'react-router-dom'
 
 
 function App() {

@@ -14,7 +14,9 @@ import com.example.backend.revizor.repository.UserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class DashboardService {
@@ -23,53 +25,71 @@ public class DashboardService {
 
     private final QuestionRepository questionRepository;
 
-    private final ObjectMapper objectMapper;
-
     private final UnitAnalysisService unitAnalysisService;
 
     private final FrequencyAnalysisService frequencyAnalysisService;
 
-    public DashboardDto generateInsights(Long userId) throws Exception{
+    public DashboardDto generateInsights(Long userId) throws Exception {
+
+        log.info("Generating dashboard for userId: {}", userId);
+
         Users user = userRepository.findById(userId).orElseThrow(() -> new UserNotFoundException("User not found"));
 
         String university = user.getUniversity();
 
         List<Question> questions = questionRepository.findByUserId(userId);
 
-        if(questions.isEmpty()){
+        log.debug("Questions found: {}", questions.size());
+
+        if (questions.isEmpty()) {
             throw new RuntimeException("No questions found");
         }
 
-        List<QuestionYearDto> input = questions.stream().map(q -> 
-            new QuestionYearDto(q.getQuestionText(),q.getYear())
-        ).toList();
+        List<QuestionYearDto> input = questions.stream().map(q -> new QuestionYearDto(q.getQuestionText(), q.getYear()))
+                .toList();
 
+        ObjectMapper objectMapper = new ObjectMapper();
 
         String questionJson = objectMapper.writeValueAsString(input);
 
+        log.debug("Sending {} questions for unit analysis", input.size());
+
+        log.info("Generating unit analysis");
+
         String unitAnalysis = unitAnalysisService.generateUnitAnalysis(university, questionJson);
 
-        if(unitAnalysis == null || unitAnalysis.isBlank()){
+        
+        if (unitAnalysis == null || unitAnalysis.isBlank()) {
+            log.warn("Failed to generate unit analysis");
             throw new RuntimeException("Failed to generate unit analysis");
         }
 
+        log.info("Unit analysis completed");
+
         String cleanedUnit = unitAnalysis
-                        .replace("```json", "")
-                        .replace("```", "")
-                        .trim();
+                .replace("```json", "")
+                .replace("```", "")
+                .trim();
+
+        log.info("Generating frequency analysis");
 
         String frequencyAnalysis = frequencyAnalysisService.analyzeQuestions(questionJson);
 
-        if(frequencyAnalysis == null || frequencyAnalysis.isBlank()){
+        if (frequencyAnalysis == null || frequencyAnalysis.isBlank()) {
+            log.warn("Failed to generate frequency analysis");
             throw new RuntimeException("Failed to generate frequency analysis");
         }
 
-        String cleanedFrequency = frequencyAnalysis
-                        .replace("```json", "")
-                        .replace("```", "")
-                        .trim();
+        log.info("Frequency analysis completed");
 
-        DashboardDto response = new DashboardDto(cleanedUnit,cleanedFrequency);
+        String cleanedFrequency = frequencyAnalysis
+                .replace("```json", "")
+                .replace("```", "")
+                .trim();
+
+        DashboardDto response = new DashboardDto(cleanedUnit, cleanedFrequency);
+
+        log.info("Dashboard generated successfully");
 
         return response;
 

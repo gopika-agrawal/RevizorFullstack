@@ -13,6 +13,10 @@ import com.example.backend.revizor.service.DashboardService;
 import lombok.RequiredArgsConstructor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+@Tag(name = "Dashboard APIs", description = "Generate Insights Dashboard")
 @RestController
 @RequestMapping("/dashboard")
 @RequiredArgsConstructor
@@ -24,10 +28,9 @@ public class DashboardController {
     ObjectMapper objectMapper = new ObjectMapper();
 
 
+    @Operation(summary = "Generate Dashboard", description = "Generates Unit Analysis and Frequency Analysis for a user")
     @GetMapping("/{userId}")
     public ResponseEntity<DashboardDto> generateInsights(@PathVariable Long userId) throws Exception {
-
-        
 
         return ResponseEntity.ok(dashboardService.generateInsights(userId));
 
