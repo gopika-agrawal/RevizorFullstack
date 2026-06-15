@@ -59,7 +59,7 @@ public class UserService {
 
         Users user = userRepository.findByEmail(userDto.getEmail());
 
-        if (user == null || !user.getPassword().equals(userDto.getPassword())) {
+        if (user == null || !passwordEncoder.matches(userDto.getPassword(), user.getPassword())) {
 
             log.warn("Invalid login attempt: {}", userDto.getEmail());
 

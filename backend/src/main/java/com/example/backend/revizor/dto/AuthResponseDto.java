@@ -20,4 +20,7 @@ public class AuthResponseDto {
     @Schema(description = "University of logged in user", example = "Dr. A.P.J. Abdul Kalam Technical University")
     private String university;
 
+    @Schema(description = "Authentication token")
+    private String token;
+
 }

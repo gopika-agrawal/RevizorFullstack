@@ -206,6 +206,8 @@ const SignupForm = ({ setIsLoggedIn }) => {
                 return;
             }
             const output = await response.json();
+
+            localStorage.setItem("token", output.token);
             localStorage.setItem("hasVisited", "true");
             localStorage.setItem(
                 "userId",
@@ -222,6 +224,7 @@ const SignupForm = ({ setIsLoggedIn }) => {
             setIsLoggedIn(true);
             toast.success("Account created successfully");
             navigate("/home");
+            
         }
         catch(error){
             console.error(error);

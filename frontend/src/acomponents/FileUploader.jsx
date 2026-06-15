@@ -163,6 +163,10 @@ const FileUploader = () => {
             const response = await fetch(url, {
                 method: "POST",
                 // content: "application/json",
+                headers: {
+                    Authorization:
+                        `Bearer ${localStorage.getItem("token")}`
+                },
                 body: formData
             });
 
@@ -176,7 +180,11 @@ const FileUploader = () => {
             
             navigate("/dashboard/unit");
 
-            const dashboardResponse = await fetch(`http://localhost:8080/api/dashboard/${id}`);
+            const dashboardResponse = await fetch(`http://localhost:8080/api/dashboard/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("token")}`
+                }
+            });
 
             if (!dashboardResponse.ok) {
                 throw new Error(
