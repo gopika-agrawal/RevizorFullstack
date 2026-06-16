@@ -1198,3 +1198,69 @@ org.springframework.web.HttpRequestMethodNotSupportedException: Request method '
 2026-06-15T20:21:31.227+05:30 DEBUG 28444 --- [revizor] [http-nio-8080-exec-8] c.e.backend.revizor.service.UserService  : Fetching user by email: c@gmail.com
 2026-06-15T20:21:31.233+05:30 TRACE 28444 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [c@gmail.com]
 2026-06-15T20:21:31.588+05:30  WARN 28444 --- [revizor] [http-nio-8080-exec-8] c.e.backend.revizor.service.UserService  : Invalid login attempt: c@gmail.com
+2026-06-15T20:30:29.737+05:30  INFO 28032 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : Starting RevizorApplication using Java 21.0.10 with PID 28032 (C:\Projects\Revizor-Fullstack\backend\target\classes started by gopik in C:\Projects\Revizor-Fullstack)
+2026-06-15T20:30:29.740+05:30 DEBUG 28032 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-06-15T20:30:29.745+05:30  INFO 28032 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-06-15T20:30:30.809+05:30  INFO 28032 --- [revizor] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-15T20:30:30.876+05:30  INFO 28032 --- [revizor] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 3 JPA repository interfaces.
+2026-06-15T20:30:31.564+05:30  INFO 28032 --- [revizor] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-06-15T20:30:31.576+05:30  INFO 28032 --- [revizor] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-15T20:30:31.576+05:30  INFO 28032 --- [revizor] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-15T20:30:31.644+05:30  INFO 28032 --- [revizor] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1828 ms
+2026-06-15T20:30:31.702+05:30 DEBUG 28032 --- [revizor] [main] c.e.b.revizor.config.JwtAuthFilter       : Filter 'jwtAuthFilter' configured for use
+2026-06-15T20:30:32.163+05:30  INFO 28032 --- [revizor] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-15T20:30:32.252+05:30  INFO 28032 --- [revizor] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-15T20:30:33.197+05:30  INFO 28032 --- [revizor] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-15T20:30:33.293+05:30  INFO 28032 --- [revizor] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-15T20:30:33.912+05:30  INFO 28032 --- [revizor] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@225ddf5f
+2026-06-15T20:30:33.915+05:30  INFO 28032 --- [revizor] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-15T20:30:34.047+05:30  INFO 28032 --- [revizor] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/revizor]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: revizor/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-15T20:30:36.155+05:30  INFO 28032 --- [revizor] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-15T20:30:36.403+05:30  INFO 28032 --- [revizor] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-15T20:30:36.683+05:30  INFO 28032 --- [revizor] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-15T20:30:37.725+05:30  WARN 28032 --- [revizor] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-15T20:30:37.959+05:30  WARN 28032 --- [revizor] [main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: fbcf0c79-b32b-435a-9092-c8887bbad623
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-15T20:30:37.978+05:30  INFO 28032 --- [revizor] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-15T20:30:39.790+05:30  INFO 28032 --- [revizor] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/api'
+2026-06-15T20:30:39.835+05:30  INFO 28032 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : Started RevizorApplication in 10.628 seconds (process running for 11.082)
+2026-06-15T20:30:39.844+05:30  WARN 28032 --- [revizor] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-15T20:30:39.845+05:30  WARN 28032 --- [revizor] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-15T20:30:42.123+05:30  INFO 28032 --- [revizor] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-15T20:30:42.125+05:30  INFO 28032 --- [revizor] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-15T20:30:42.128+05:30  INFO 28032 --- [revizor] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-06-15T20:30:43.282+05:30  INFO 28032 --- [revizor] [http-nio-8080-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 671 ms
+2026-06-15T20:31:04.964+05:30  INFO 28032 --- [revizor] [http-nio-8080-exec-10] c.e.b.revizor.controller.UserController  : Login attempt for email: c@gmail.com
+2026-06-15T20:31:04.965+05:30 DEBUG 28032 --- [revizor] [http-nio-8080-exec-10] c.e.backend.revizor.service.UserService  : Fetching user by email: c@gmail.com
+2026-06-15T20:31:05.957+05:30 TRACE 28032 --- [revizor] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [c@gmail.com]
+2026-06-15T20:31:06.474+05:30  INFO 28032 --- [revizor] [http-nio-8080-exec-10] c.e.b.revizor.controller.UserController  : Login successful for email: c@gmail.com
+2026-06-15T20:31:47.816+05:30  INFO 28032 --- [revizor] [http-nio-8080-exec-5] c.e.b.revizor.service.DashboardService   : Generating dashboard for userId: 1
+2026-06-15T20:31:47.854+05:30 TRACE 28032 --- [revizor] [http-nio-8080-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2026-06-15T20:31:47.894+05:30 TRACE 28032 --- [revizor] [http-nio-8080-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2026-06-15T20:31:47.943+05:30 DEBUG 28032 --- [revizor] [http-nio-8080-exec-5] c.e.b.revizor.service.DashboardService   : Questions found: 49
+2026-06-15T20:31:47.952+05:30 DEBUG 28032 --- [revizor] [http-nio-8080-exec-5] c.e.b.revizor.service.DashboardService   : Sending 49 questions for unit analysis
+2026-06-15T20:31:47.956+05:30  INFO 28032 --- [revizor] [http-nio-8080-exec-5] c.e.b.revizor.service.DashboardService   : Generating unit analysis
+2026-06-15T20:31:47.957+05:30  INFO 28032 --- [revizor] [http-nio-8080-exec-5] c.e.b.r.service.UnitAnalysisService      : Starting unit analysis for university: Dr. A.P.J. Abdul Technical University, Lucknow
+2026-06-15T20:31:47.959+05:30 DEBUG 28032 --- [revizor] [http-nio-8080-exec-5] c.e.backend.revizor.service.GroqService  : Model used: llama-3.3-70b-versatile
+2026-06-15T20:31:50.415+05:30  INFO 28032 --- [revizor] [http-nio-8080-exec-5] c.e.backend.revizor.service.GroqService  : Groq response received
+2026-06-15T20:31:50.429+05:30  INFO 28032 --- [revizor] [http-nio-8080-exec-5] c.e.b.revizor.service.DashboardService   : Unit analysis completed
+2026-06-15T20:31:50.430+05:30  INFO 28032 --- [revizor] [http-nio-8080-exec-5] c.e.b.revizor.service.DashboardService   : Generating frequency analysis
+2026-06-15T20:31:50.431+05:30 DEBUG 28032 --- [revizor] [http-nio-8080-exec-5] c.e.backend.revizor.service.GroqService  : Model used: llama-3.3-70b-versatile
+2026-06-15T20:31:52.345+05:30  INFO 28032 --- [revizor] [http-nio-8080-exec-5] c.e.backend.revizor.service.GroqService  : Groq response received
+2026-06-15T20:31:52.353+05:30  INFO 28032 --- [revizor] [http-nio-8080-exec-5] c.e.b.revizor.service.DashboardService   : Frequency analysis completed
+2026-06-15T20:31:52.355+05:30  INFO 28032 --- [revizor] [http-nio-8080-exec-5] c.e.b.revizor.service.DashboardService   : Dashboard generated successfully
