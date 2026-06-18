@@ -668,3 +668,63 @@ This generated password is for development use only. Your security configuration
 2026-06-17T20:49:58.845+05:30  INFO 4024 --- [revizor] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-06-17T20:49:58.856+05:30  INFO 4024 --- [revizor] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-06-17T20:50:00.013+05:30  INFO 4024 --- [revizor] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-17T22:46:04.379+05:30  WARN 25476 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h37m33s219ms589µs400ns).
+2026-06-17T22:46:04.387+05:30  WARN 25476 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@e116a6e (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-17T22:46:04.390+05:30  WARN 25476 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@ce9141b (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-17T22:46:04.391+05:30  WARN 25476 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2902fe69 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-17T22:46:04.392+05:30  WARN 25476 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@40a2edd8 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-17T22:46:04.392+05:30  WARN 25476 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@45e5adb8 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-17T22:46:04.394+05:30  WARN 25476 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@16830d3 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-17T22:46:04.395+05:30  WARN 25476 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@3f277721 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-17T22:46:04.396+05:30  WARN 25476 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@683c8130 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-17T22:46:04.397+05:30  WARN 25476 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@5c69e2 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-17T23:13:13.448+05:30  WARN 25476 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@40f23f92 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-17T23:13:13.469+05:30  WARN 25476 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@4851fa7e (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-17T23:13:13.475+05:30  WARN 25476 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2b2189ef (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-17T23:13:13.477+05:30  WARN 25476 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m35s196ms519µs800ns).
+2026-06-17T23:13:13.481+05:30  WARN 25476 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@7a7e3db6 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-17T23:13:13.487+05:30  WARN 25476 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@78a2aa7d (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-17T23:13:13.489+05:30  WARN 25476 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@3f673d1d (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-17T23:13:13.491+05:30  WARN 25476 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@18aeb5ef (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-17T23:13:13.498+05:30  WARN 25476 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@1336a8c1 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-17T23:13:13.502+05:30  WARN 25476 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@7e2a1998 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-17T23:20:23.119+05:30  INFO 25844 --- [revizor] [main] c.e.b.revizor.RevizorApplicationTests    : Starting RevizorApplicationTests using Java 26.0.1 with PID 25844 (started by gopik in C:\Projects\Revizor-Fullstack\backend)
+2026-06-17T23:20:23.123+05:30 DEBUG 25844 --- [revizor] [main] c.e.b.revizor.RevizorApplicationTests    : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-06-17T23:20:23.126+05:30  INFO 25844 --- [revizor] [main] c.e.b.revizor.RevizorApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2026-06-17T23:20:26.424+05:30  INFO 25844 --- [revizor] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-17T23:20:26.748+05:30  INFO 25844 --- [revizor] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 268 ms. Found 3 JPA repository interfaces.
+2026-06-17T23:20:28.397+05:30  INFO 25844 --- [revizor] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-17T23:20:28.526+05:30  INFO 25844 --- [revizor] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-17T23:20:29.551+05:30  INFO 25844 --- [revizor] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-17T23:20:29.705+05:30  INFO 25844 --- [revizor] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-17T23:20:33.056+05:30  INFO 25844 --- [revizor] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5535e9
+2026-06-17T23:20:33.073+05:30  INFO 25844 --- [revizor] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-17T23:20:34.415+05:30  INFO 25844 --- [revizor] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-withered-dust-aosvq3io-pooler.c-2.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.4
+	Default catalog/schema: neondb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-17T23:20:37.039+05:30  INFO 25844 --- [revizor] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-17T23:20:38.680+05:30  INFO 25844 --- [revizor] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-17T23:20:39.414+05:30  INFO 25844 --- [revizor] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-17T23:20:40.511+05:30  WARN 25844 --- [revizor] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-17T23:20:41.070+05:30  WARN 25844 --- [revizor] [main] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: bf7d1d67-dceb-4265-8177-df0a8e25a3a5
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-17T23:20:41.101+05:30  INFO 25844 --- [revizor] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-17T23:20:42.866+05:30  INFO 25844 --- [revizor] [main] c.e.b.revizor.RevizorApplicationTests    : Started RevizorApplicationTests in 20.647 seconds (process running for 24.091)
+2026-06-17T23:20:42.879+05:30  WARN 25844 --- [revizor] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-17T23:20:42.879+05:30  WARN 25844 --- [revizor] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-17T23:20:44.218+05:30  INFO 25844 --- [revizor] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-17T23:20:44.236+05:30  INFO 25844 --- [revizor] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-17T23:20:45.570+05:30  INFO 25844 --- [revizor] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
