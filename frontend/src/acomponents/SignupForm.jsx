@@ -192,7 +192,7 @@ const SignupForm = ({ setIsLoggedIn }) => {
 
     async function onSubmit(data) {
         try{
-            const response = await fetch("http://localhost:8080/api/users", {
+            const response = await fetch("https://revizorfullstack-production.up.railway.app/users", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"

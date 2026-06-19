@@ -1,426 +1,32 @@
-2026-06-19T00:00:31.682+05:30  WARN 14716 --- [revizor] [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (814812a5-3fb1-46d8-919c-fc00ae3e8b3a)
-
-org.postgresql.util.PSQLException: The connection attempt failed.
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:385) ~[postgresql-42.7.10.jar:42.7.10]
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57) ~[postgresql-42.7.10.jar:42.7.10]
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:290) ~[postgresql-42.7.10.jar:42.7.10]
-	at org.postgresql.Driver.makeConnection(Driver.java:448) ~[postgresql-42.7.10.jar:42.7.10]
-	at org.postgresql.Driver.connect(Driver.java:298) ~[postgresql-42.7.10.jar:42.7.10]
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-7.0.2.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-7.0.2.jar:na]
-	at java.base/java.util.concurrent.FutureTask.run(Unknown Source) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
-	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
-Caused by: java.net.UnknownHostException: ep-dark-shape-adbsqv7a-pooler.c-2.us-east-1.aws.neon.tech
-	at java.base/sun.nio.ch.NioSocketImpl.connect(Unknown Source) ~[na:na]
-	at java.base/java.net.SocksSocketImpl.connect(Unknown Source) ~[na:na]
-	at java.base/java.net.Socket.connect(Unknown Source) ~[na:na]
-	at org.postgresql.core.PGStream.createSocket(PGStream.java:261) ~[postgresql-42.7.10.jar:42.7.10]
-	at org.postgresql.core.PGStream.<init>(PGStream.java:122) ~[postgresql-42.7.10.jar:42.7.10]
-	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146) ~[postgresql-42.7.10.jar:42.7.10]
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289) ~[postgresql-42.7.10.jar:42.7.10]
-	... 14 common frames omitted
-
-2026-06-19T00:01:41.341+05:30  WARN 14716 --- [revizor] [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (169045de-7366-4fbe-a300-b662b216b35b)
-
-org.postgresql.util.PSQLException: The connection attempt failed.
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:385) ~[postgresql-42.7.10.jar:42.7.10]
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57) ~[postgresql-42.7.10.jar:42.7.10]
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:290) ~[postgresql-42.7.10.jar:42.7.10]
-	at org.postgresql.Driver.makeConnection(Driver.java:448) ~[postgresql-42.7.10.jar:42.7.10]
-	at org.postgresql.Driver.connect(Driver.java:298) ~[postgresql-42.7.10.jar:42.7.10]
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-7.0.2.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-7.0.2.jar:na]
-	at java.base/java.util.concurrent.FutureTask.run(Unknown Source) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
-	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
-Caused by: java.net.UnknownHostException: ep-dark-shape-adbsqv7a-pooler.c-2.us-east-1.aws.neon.tech
-	at java.base/sun.nio.ch.NioSocketImpl.connect(Unknown Source) ~[na:na]
-	at java.base/java.net.SocksSocketImpl.connect(Unknown Source) ~[na:na]
-	at java.base/java.net.Socket.connect(Unknown Source) ~[na:na]
-	at org.postgresql.core.PGStream.createSocket(PGStream.java:261) ~[postgresql-42.7.10.jar:42.7.10]
-	at org.postgresql.core.PGStream.<init>(PGStream.java:122) ~[postgresql-42.7.10.jar:42.7.10]
-	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146) ~[postgresql-42.7.10.jar:42.7.10]
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289) ~[postgresql-42.7.10.jar:42.7.10]
-	... 14 common frames omitted
-
-2026-06-19T00:14:10.805+05:30  WARN 14716 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m26s961ms271µs).
-2026-06-19T19:20:40.245+05:30  INFO 4960 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : Starting RevizorApplication using Java 21.0.10 with PID 4960 (C:\Projects\Revizor-Fullstack\backend\target\classes started by gopik in C:\Projects\Revizor-Fullstack)
-2026-06-19T19:20:40.248+05:30 DEBUG 4960 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : Running with Spring Boot v4.0.6, Spring v7.0.7
-2026-06-19T19:20:40.249+05:30  INFO 4960 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : No active profile set, falling back to 1 default profile: "default"
-2026-06-19T19:20:41.232+05:30  INFO 4960 --- [revizor] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-06-19T19:20:41.300+05:30  INFO 4960 --- [revizor] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 3 JPA repository interfaces.
-2026-06-19T19:20:42.013+05:30  INFO 4960 --- [revizor] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-06-19T19:20:42.027+05:30  INFO 4960 --- [revizor] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-06-19T19:20:42.028+05:30  INFO 4960 --- [revizor] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-06-19T19:20:42.100+05:30  INFO 4960 --- [revizor] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1796 ms
-2026-06-19T19:20:42.172+05:30 DEBUG 4960 --- [revizor] [main] c.e.b.revizor.config.JwtAuthFilter       : Filter 'jwtAuthFilter' configured for use
-2026-06-19T19:20:42.338+05:30  INFO 4960 --- [revizor] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-06-19T19:20:42.412+05:30  INFO 4960 --- [revizor] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
-2026-06-19T19:20:42.898+05:30  INFO 4960 --- [revizor] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-06-19T19:20:42.935+05:30  INFO 4960 --- [revizor] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-06-19T19:20:47.703+05:30  INFO 4960 --- [revizor] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4f9213d2
-2026-06-19T19:20:47.705+05:30  INFO 4960 --- [revizor] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-06-19T19:20:50.044+05:30  INFO 4960 --- [revizor] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://ep-dark-shape-adbsqv7a-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channelBinding=require]
-	Database driver: PostgreSQL JDBC Driver
-	Database dialect: PostgreSQLDialect
-	Database version: 18.4
-	Default catalog/schema: neondb/public
-	Autocommit mode: undefined/unknown
-	Isolation level: READ_COMMITTED [default READ_COMMITTED]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-06-19T19:20:51.049+05:30  INFO 4960 --- [revizor] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-06-19T19:20:55.615+05:30  INFO 4960 --- [revizor] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-06-19T19:20:55.749+05:30  INFO 4960 --- [revizor] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-06-19T19:20:56.126+05:30  WARN 4960 --- [revizor] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-19T19:20:56.193+05:30  WARN 4960 --- [revizor] [main] .s.a.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: be511661-af25-4bc5-81c6-586b2d528ebf
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2026-06-19T19:20:56.202+05:30  INFO 4960 --- [revizor] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2026-06-19T19:20:56.836+05:30  INFO 4960 --- [revizor] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/api'
-2026-06-19T19:20:56.849+05:30  INFO 4960 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : Started RevizorApplication in 17.137 seconds (process running for 17.628)
-2026-06-19T19:20:56.854+05:30  WARN 4960 --- [revizor] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
-2026-06-19T19:20:56.854+05:30  WARN 4960 --- [revizor] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
-2026-06-19T19:23:40.415+05:30  INFO 15476 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : Starting RevizorApplication using Java 21.0.10 with PID 15476 (C:\Projects\Revizor-Fullstack\backend\target\classes started by gopik in C:\Projects\Revizor-Fullstack)
-2026-06-19T19:23:40.418+05:30 DEBUG 15476 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : Running with Spring Boot v4.0.6, Spring v7.0.7
-2026-06-19T19:23:40.420+05:30  INFO 15476 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : No active profile set, falling back to 1 default profile: "default"
-2026-06-19T19:23:41.368+05:30  INFO 15476 --- [revizor] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-06-19T19:23:41.436+05:30  INFO 15476 --- [revizor] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 3 JPA repository interfaces.
-2026-06-19T19:23:42.136+05:30  INFO 15476 --- [revizor] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-06-19T19:23:42.193+05:30  INFO 15476 --- [revizor] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-06-19T19:23:42.200+05:30  INFO 15476 --- [revizor] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-06-19T19:23:42.288+05:30  INFO 15476 --- [revizor] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1817 ms
-2026-06-19T19:23:42.361+05:30 DEBUG 15476 --- [revizor] [main] c.e.b.revizor.config.JwtAuthFilter       : Filter 'jwtAuthFilter' configured for use
-2026-06-19T19:23:42.530+05:30  INFO 15476 --- [revizor] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-06-19T19:23:42.617+05:30  INFO 15476 --- [revizor] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
-2026-06-19T19:23:43.268+05:30  INFO 15476 --- [revizor] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-06-19T19:23:43.343+05:30  INFO 15476 --- [revizor] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-06-19T19:23:47.489+05:30  INFO 15476 --- [revizor] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5e1a7d3
-2026-06-19T19:23:47.493+05:30  INFO 15476 --- [revizor] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-06-19T19:23:50.015+05:30  INFO 15476 --- [revizor] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://ep-dark-shape-adbsqv7a-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channelBinding=require]
-	Database driver: PostgreSQL JDBC Driver
-	Database dialect: PostgreSQLDialect
-	Database version: 18.4
-	Default catalog/schema: neondb/public
-	Autocommit mode: undefined/unknown
-	Isolation level: READ_COMMITTED [default READ_COMMITTED]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-06-19T19:23:51.875+05:30  INFO 15476 --- [revizor] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-06-19T19:23:57.142+05:30  INFO 15476 --- [revizor] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-06-19T19:23:57.325+05:30  INFO 15476 --- [revizor] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-06-19T19:23:57.685+05:30  WARN 15476 --- [revizor] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-19T19:23:57.774+05:30  WARN 15476 --- [revizor] [main] .s.a.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 8eeadb24-62bc-42d7-ba94-0d78f010322f
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2026-06-19T19:23:57.783+05:30  INFO 15476 --- [revizor] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2026-06-19T19:23:58.340+05:30  INFO 15476 --- [revizor] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/api'
-2026-06-19T19:23:58.348+05:30  INFO 15476 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : Started RevizorApplication in 18.814 seconds (process running for 19.617)
-2026-06-19T19:23:58.352+05:30  WARN 15476 --- [revizor] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
-2026-06-19T19:23:58.352+05:30  WARN 15476 --- [revizor] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
-2026-06-19T19:24:17.963+05:30  INFO 15476 --- [revizor] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-06-19T19:24:17.965+05:30  INFO 15476 --- [revizor] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-06-19T19:24:17.972+05:30  INFO 15476 --- [revizor] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
-2026-06-19T19:24:18.294+05:30  INFO 15476 --- [revizor] [http-nio-8080-exec-2] c.e.b.revizor.controller.UserController  : Login attempt for email: c@gmail.com
-2026-06-19T19:24:18.294+05:30 DEBUG 15476 --- [revizor] [http-nio-8080-exec-2] c.e.backend.revizor.service.UserService  : Fetching user by email: c@gmail.com
-2026-06-19T19:24:19.982+05:30 TRACE 15476 --- [revizor] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [c@gmail.com]
-2026-06-19T19:24:20.572+05:30  WARN 15476 --- [revizor] [http-nio-8080-exec-2] c.e.backend.revizor.service.UserService  : Invalid login attempt: c@gmail.com
-2026-06-19T19:24:55.083+05:30  INFO 15476 --- [revizor] [http-nio-8080-exec-3] c.e.b.revizor.controller.UserController  : Signup request received for email: c@gmail.com
-2026-06-19T19:24:55.083+05:30 DEBUG 15476 --- [revizor] [http-nio-8080-exec-3] c.e.backend.revizor.service.UserService  : Checking if email exists: c@gmail.com
-2026-06-19T19:24:55.341+05:30 TRACE 15476 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [c@gmail.com]
-2026-06-19T19:24:55.597+05:30  INFO 15476 --- [revizor] [http-nio-8080-exec-3] c.e.backend.revizor.service.UserService  : Creating new user: c@gmail.com
-2026-06-19T19:24:55.976+05:30 TRACE 15476 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [c@gmail.com]
-2026-06-19T19:24:55.977+05:30 TRACE 15476 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [aaa]
-2026-06-19T19:24:55.978+05:30 TRACE 15476 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [bbb]
-2026-06-19T19:24:55.981+05:30 TRACE 15476 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (4:VARCHAR) <- [$2a$10$wLzyocnD5VS2/VSyXyABdOSVIqtN2k/.3ti4Kv1G/qzrjALG.Hkia]
-2026-06-19T19:24:55.982+05:30 TRACE 15476 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (5:VARCHAR) <- [Dr. A.P.J. Abdul Technical University, Lucknow]
-2026-06-19T19:24:56.983+05:30  INFO 15476 --- [revizor] [http-nio-8080-exec-3] c.e.b.revizor.controller.UserController  : User registered successfully: c@gmail.com
-2026-06-19T19:26:15.500+05:30  INFO 14656 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : Starting RevizorApplication using Java 21.0.10 with PID 14656 (C:\Projects\Revizor-Fullstack\backend\target\classes started by gopik in C:\Projects\Revizor-Fullstack)
-2026-06-19T19:26:15.503+05:30 DEBUG 14656 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : Running with Spring Boot v4.0.6, Spring v7.0.7
-2026-06-19T19:26:15.504+05:30  INFO 14656 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : No active profile set, falling back to 1 default profile: "default"
-2026-06-19T19:26:16.452+05:30  INFO 14656 --- [revizor] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-06-19T19:26:16.540+05:30  INFO 14656 --- [revizor] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 3 JPA repository interfaces.
-2026-06-19T19:26:17.249+05:30  INFO 14656 --- [revizor] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-06-19T19:26:17.263+05:30  INFO 14656 --- [revizor] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-06-19T19:26:17.264+05:30  INFO 14656 --- [revizor] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-06-19T19:26:17.337+05:30  INFO 14656 --- [revizor] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1770 ms
-2026-06-19T19:26:17.415+05:30 DEBUG 14656 --- [revizor] [main] c.e.b.revizor.config.JwtAuthFilter       : Filter 'jwtAuthFilter' configured for use
-2026-06-19T19:26:17.557+05:30  INFO 14656 --- [revizor] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-06-19T19:26:17.613+05:30  INFO 14656 --- [revizor] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
-2026-06-19T19:26:18.102+05:30  INFO 14656 --- [revizor] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-06-19T19:26:18.133+05:30  INFO 14656 --- [revizor] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-06-19T19:26:21.583+05:30  INFO 14656 --- [revizor] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4f9213d2
-2026-06-19T19:26:21.587+05:30  INFO 14656 --- [revizor] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-06-19T19:26:23.705+05:30  INFO 14656 --- [revizor] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://ep-dark-shape-adbsqv7a-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channelBinding=require]
-	Database driver: PostgreSQL JDBC Driver
-	Database dialect: PostgreSQLDialect
-	Database version: 18.4
-	Default catalog/schema: neondb/public
-	Autocommit mode: undefined/unknown
-	Isolation level: READ_COMMITTED [default READ_COMMITTED]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-06-19T19:26:25.185+05:30  INFO 14656 --- [revizor] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-06-19T19:26:28.997+05:30  INFO 14656 --- [revizor] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-06-19T19:26:29.137+05:30  INFO 14656 --- [revizor] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-06-19T19:26:29.465+05:30  WARN 14656 --- [revizor] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-19T19:26:29.533+05:30  WARN 14656 --- [revizor] [main] .s.a.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 11721204-baa9-4602-90a2-d45c9b0a2c75
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2026-06-19T19:26:29.544+05:30  INFO 14656 --- [revizor] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2026-06-19T19:26:30.097+05:30  INFO 14656 --- [revizor] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/api'
-2026-06-19T19:26:30.109+05:30  INFO 14656 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : Started RevizorApplication in 15.554 seconds (process running for 15.992)
-2026-06-19T19:26:30.112+05:30  WARN 14656 --- [revizor] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
-2026-06-19T19:26:30.113+05:30  WARN 14656 --- [revizor] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
-2026-06-19T19:27:13.771+05:30  INFO 1236 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : Starting RevizorApplication using Java 21.0.10 with PID 1236 (C:\Projects\Revizor-Fullstack\backend\target\classes started by gopik in C:\Projects\Revizor-Fullstack)
-2026-06-19T19:27:13.776+05:30 DEBUG 1236 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : Running with Spring Boot v4.0.6, Spring v7.0.7
-2026-06-19T19:27:13.777+05:30  INFO 1236 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : No active profile set, falling back to 1 default profile: "default"
-2026-06-19T19:27:14.708+05:30  INFO 1236 --- [revizor] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-06-19T19:27:14.772+05:30  INFO 1236 --- [revizor] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 3 JPA repository interfaces.
-2026-06-19T19:27:15.425+05:30  INFO 1236 --- [revizor] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-06-19T19:27:15.440+05:30  INFO 1236 --- [revizor] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-06-19T19:27:15.441+05:30  INFO 1236 --- [revizor] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-06-19T19:27:15.510+05:30  INFO 1236 --- [revizor] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1680 ms
-2026-06-19T19:27:15.576+05:30 DEBUG 1236 --- [revizor] [main] c.e.b.revizor.config.JwtAuthFilter       : Filter 'jwtAuthFilter' configured for use
-2026-06-19T19:27:15.742+05:30  INFO 1236 --- [revizor] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-06-19T19:27:15.795+05:30  INFO 1236 --- [revizor] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
-2026-06-19T19:27:16.243+05:30  INFO 1236 --- [revizor] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-06-19T19:27:16.288+05:30  INFO 1236 --- [revizor] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-06-19T19:27:20.294+05:30  INFO 1236 --- [revizor] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5e1a7d3
-2026-06-19T19:27:20.298+05:30  INFO 1236 --- [revizor] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-06-19T19:27:22.216+05:30  INFO 1236 --- [revizor] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://ep-dark-shape-adbsqv7a-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channelBinding=require]
-	Database driver: PostgreSQL JDBC Driver
-	Database dialect: PostgreSQLDialect
-	Database version: 18.4
-	Default catalog/schema: neondb/public
-	Autocommit mode: undefined/unknown
-	Isolation level: READ_COMMITTED [default READ_COMMITTED]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-06-19T19:27:23.338+05:30  INFO 1236 --- [revizor] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-06-19T19:27:25.988+05:30  INFO 1236 --- [revizor] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-06-19T19:27:26.154+05:30  INFO 1236 --- [revizor] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-06-19T19:27:26.464+05:30  WARN 1236 --- [revizor] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-19T19:27:26.539+05:30  WARN 1236 --- [revizor] [main] .s.a.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 483c7646-801a-4d19-95eb-40162da0776b
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2026-06-19T19:27:26.549+05:30  INFO 1236 --- [revizor] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2026-06-19T19:27:27.156+05:30  INFO 1236 --- [revizor] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/api'
-2026-06-19T19:27:27.167+05:30  INFO 1236 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : Started RevizorApplication in 13.961 seconds (process running for 14.876)
-2026-06-19T19:27:27.170+05:30  WARN 1236 --- [revizor] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
-2026-06-19T19:27:27.171+05:30  WARN 1236 --- [revizor] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
-2026-06-19T19:30:35.231+05:30  INFO 1236 --- [revizor] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-06-19T19:30:35.233+05:30  INFO 1236 --- [revizor] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-06-19T19:30:35.235+05:30  INFO 1236 --- [revizor] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2026-06-19T19:30:35.892+05:30  INFO 1236 --- [revizor] [http-nio-8080-exec-3] c.e.b.revizor.controller.FileController  : File upload request received for userId: 1
-2026-06-19T19:30:37.216+05:30 TRACE 1236 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
-2026-06-19T19:30:37.524+05:30 TRACE 1236 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
-2026-06-19T19:30:37.912+05:30 TRACE 1236 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
-2026-06-19T22:06:50.412+05:30  WARN 1236 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2570fcdf (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
-2026-06-19T22:06:50.432+05:30  WARN 1236 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h22m59s630ms612µs500ns).
-2026-06-19T22:06:50.468+05:30  WARN 1236 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@699b188d (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
-2026-06-19T22:06:50.503+05:30  WARN 1236 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@71f27366 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
-2026-06-19T22:06:50.526+05:30  WARN 1236 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@661288bd (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
-2026-06-19T22:06:50.549+05:30  WARN 1236 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@5193a9c7 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
-2026-06-19T22:06:50.585+05:30  WARN 1236 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@60fd8c08 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
-2026-06-19T22:06:50.607+05:30  WARN 1236 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2f6aa32 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
-2026-06-19T22:06:50.622+05:30  WARN 1236 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@5e1a7d3 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
-2026-06-19T22:06:50.635+05:30  WARN 1236 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@70539db1 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
-2026-06-19T22:06:50.648+05:30  WARN 1236 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@3c42cfed (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
-2026-06-19T22:32:52.157+05:30  WARN 1236 --- [revizor] [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (39bade04-78f9-4f71-9f45-9cb6bb49aa6e)
-
-org.postgresql.util.PSQLException: The connection attempt failed.
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:385) ~[postgresql-42.7.10.jar:42.7.10]
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57) ~[postgresql-42.7.10.jar:42.7.10]
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:290) ~[postgresql-42.7.10.jar:42.7.10]
-	at org.postgresql.Driver.makeConnection(Driver.java:448) ~[postgresql-42.7.10.jar:42.7.10]
-	at org.postgresql.Driver.connect(Driver.java:298) ~[postgresql-42.7.10.jar:42.7.10]
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-7.0.2.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-7.0.2.jar:na]
-	at java.base/java.util.concurrent.FutureTask.run(Unknown Source) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
-	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
-Caused by: java.net.SocketException: Connection reset
-	at java.base/sun.nio.ch.NioSocketImpl.implRead(Unknown Source) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl.read(Unknown Source) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl$1.read(Unknown Source) ~[na:na]
-	at java.base/java.net.Socket$SocketInputStream.read(Unknown Source) ~[na:na]
-	at java.base/sun.security.ssl.SSLSocketInputRecord.read(Unknown Source) ~[na:na]
-	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(Unknown Source) ~[na:na]
-	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(Unknown Source) ~[na:na]
-	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(Unknown Source) ~[na:na]
-	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(Unknown Source) ~[na:na]
-	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:192) ~[postgresql-42.7.10.jar:42.7.10]
-	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:159) ~[postgresql-42.7.10.jar:42.7.10]
-	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:144) ~[postgresql-42.7.10.jar:42.7.10]
-	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:76) ~[postgresql-42.7.10.jar:42.7.10]
-	at org.postgresql.core.PGStream.receiveChar(PGStream.java:477) ~[postgresql-42.7.10.jar:42.7.10]
-	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:745) ~[postgresql-42.7.10.jar:42.7.10]
-	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:234) ~[postgresql-42.7.10.jar:42.7.10]
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289) ~[postgresql-42.7.10.jar:42.7.10]
-	... 14 common frames omitted
-
-2026-06-19T23:24:34.530+05:30  WARN 1236 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h17m44s98ms294µs700ns).
-2026-06-19T23:34:09.511+05:30  INFO 24276 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : Starting RevizorApplication using Java 21.0.10 with PID 24276 (C:\Projects\Revizor-Fullstack\backend\target\classes started by gopik in C:\Projects\Revizor-Fullstack)
-2026-06-19T23:34:09.516+05:30 DEBUG 24276 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : Running with Spring Boot v4.0.6, Spring v7.0.7
-2026-06-19T23:34:09.517+05:30  INFO 24276 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : No active profile set, falling back to 1 default profile: "default"
-2026-06-19T23:34:10.468+05:30  INFO 24276 --- [revizor] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-06-19T23:34:10.532+05:30  INFO 24276 --- [revizor] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 3 JPA repository interfaces.
-2026-06-19T23:34:11.257+05:30  INFO 24276 --- [revizor] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-06-19T23:34:11.274+05:30  INFO 24276 --- [revizor] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-06-19T23:34:11.274+05:30  INFO 24276 --- [revizor] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-06-19T23:34:11.352+05:30  INFO 24276 --- [revizor] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1783 ms
-2026-06-19T23:34:11.417+05:30 DEBUG 24276 --- [revizor] [main] c.e.b.revizor.config.JwtAuthFilter       : Filter 'jwtAuthFilter' configured for use
-2026-06-19T23:34:11.591+05:30  INFO 24276 --- [revizor] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-06-19T23:34:11.678+05:30  INFO 24276 --- [revizor] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
-2026-06-19T23:34:12.194+05:30  INFO 24276 --- [revizor] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-06-19T23:34:12.236+05:30  INFO 24276 --- [revizor] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-06-19T23:34:17.874+05:30  INFO 24276 --- [revizor] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5e1a7d3
-2026-06-19T23:34:17.879+05:30  INFO 24276 --- [revizor] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-06-19T23:34:20.777+05:30  INFO 24276 --- [revizor] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://ep-dark-shape-adbsqv7a-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channelBinding=require]
-	Database driver: PostgreSQL JDBC Driver
-	Database dialect: PostgreSQLDialect
-	Database version: 18.4
-	Default catalog/schema: neondb/public
-	Autocommit mode: undefined/unknown
-	Isolation level: READ_COMMITTED [default READ_COMMITTED]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-06-19T23:34:22.209+05:30  INFO 24276 --- [revizor] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-06-19T23:34:26.677+05:30  INFO 24276 --- [revizor] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-06-19T23:34:26.866+05:30  INFO 24276 --- [revizor] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-06-19T23:34:27.276+05:30  WARN 24276 --- [revizor] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-19T23:34:27.355+05:30  WARN 24276 --- [revizor] [main] .s.a.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 40fbd0a1-0424-442f-bf31-ddd4399414fe
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2026-06-19T23:34:27.363+05:30  INFO 24276 --- [revizor] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2026-06-19T23:34:28.011+05:30  INFO 24276 --- [revizor] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/api'
-2026-06-19T23:34:28.019+05:30  INFO 24276 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : Started RevizorApplication in 19.005 seconds (process running for 19.694)
-2026-06-19T23:34:28.024+05:30  WARN 24276 --- [revizor] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
-2026-06-19T23:34:28.027+05:30  WARN 24276 --- [revizor] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
-2026-06-19T23:34:51.341+05:30  INFO 7716 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : Starting RevizorApplication using Java 21.0.10 with PID 7716 (C:\Projects\Revizor-Fullstack\backend\target\classes started by gopik in C:\Projects\Revizor-Fullstack)
-2026-06-19T23:34:51.345+05:30 DEBUG 7716 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : Running with Spring Boot v4.0.6, Spring v7.0.7
-2026-06-19T23:34:51.346+05:30  INFO 7716 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : No active profile set, falling back to 1 default profile: "default"
-2026-06-19T23:34:52.344+05:30  INFO 7716 --- [revizor] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-06-19T23:34:52.408+05:30  INFO 7716 --- [revizor] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 3 JPA repository interfaces.
-2026-06-19T23:34:53.060+05:30  INFO 7716 --- [revizor] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-06-19T23:34:53.073+05:30  INFO 7716 --- [revizor] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-06-19T23:34:53.073+05:30  INFO 7716 --- [revizor] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-06-19T23:34:53.145+05:30  INFO 7716 --- [revizor] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1744 ms
-2026-06-19T23:34:53.219+05:30 DEBUG 7716 --- [revizor] [main] c.e.b.revizor.config.JwtAuthFilter       : Filter 'jwtAuthFilter' configured for use
-2026-06-19T23:34:53.364+05:30  INFO 7716 --- [revizor] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-06-19T23:34:53.425+05:30  INFO 7716 --- [revizor] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
-2026-06-19T23:34:53.887+05:30  INFO 7716 --- [revizor] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-06-19T23:34:53.917+05:30  INFO 7716 --- [revizor] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-06-19T23:34:59.445+05:30  INFO 7716 --- [revizor] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1eda309d
-2026-06-19T23:34:59.450+05:30  INFO 7716 --- [revizor] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-06-19T23:35:02.527+05:30  INFO 7716 --- [revizor] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://ep-dark-shape-adbsqv7a-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channelBinding=require]
-	Database driver: PostgreSQL JDBC Driver
-	Database dialect: PostgreSQLDialect
-	Database version: 18.4
-	Default catalog/schema: neondb/public
-	Autocommit mode: undefined/unknown
-	Isolation level: READ_COMMITTED [default READ_COMMITTED]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-06-19T23:35:03.628+05:30  INFO 7716 --- [revizor] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-06-19T23:35:07.341+05:30  INFO 7716 --- [revizor] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-06-19T23:35:07.540+05:30  INFO 7716 --- [revizor] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-06-19T23:35:07.896+05:30  WARN 7716 --- [revizor] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-19T23:35:07.976+05:30  WARN 7716 --- [revizor] [main] .s.a.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 421af765-1b0a-491c-b34a-445db09362f2
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2026-06-19T23:35:07.984+05:30  INFO 7716 --- [revizor] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2026-06-19T23:35:08.554+05:30  INFO 7716 --- [revizor] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/api'
-2026-06-19T23:35:08.562+05:30  INFO 7716 --- [revizor] [main] c.e.backend.revizor.RevizorApplication   : Started RevizorApplication in 18.054 seconds (process running for 18.512)
-2026-06-19T23:35:08.568+05:30  WARN 7716 --- [revizor] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
-2026-06-19T23:35:08.568+05:30  WARN 7716 --- [revizor] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
-2026-06-19T23:35:28.774+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-06-19T23:35:28.775+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-06-19T23:35:28.780+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2026-06-19T23:35:29.257+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-5] c.e.b.revizor.controller.UserController  : Login attempt for email: c@gmail.com
-2026-06-19T23:35:29.262+05:30 DEBUG 7716 --- [revizor] [http-nio-8080-exec-5] c.e.backend.revizor.service.UserService  : Fetching user by email: c@gmail.com
-2026-06-19T23:35:31.419+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [c@gmail.com]
-2026-06-19T23:35:31.837+05:30  WARN 7716 --- [revizor] [http-nio-8080-exec-5] c.e.backend.revizor.service.UserService  : Invalid login attempt: c@gmail.com
-2026-06-19T23:36:41.038+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-2] c.e.b.revizor.controller.UserController  : Signup request received for email: c@gmail.com
-2026-06-19T23:36:41.038+05:30 DEBUG 7716 --- [revizor] [http-nio-8080-exec-2] c.e.backend.revizor.service.UserService  : Checking if email exists: c@gmail.com
-2026-06-19T23:36:41.424+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [c@gmail.com]
-2026-06-19T23:36:41.781+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-2] c.e.backend.revizor.service.UserService  : Creating new user: c@gmail.com
-2026-06-19T23:36:42.179+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [c@gmail.com]
-2026-06-19T23:36:42.181+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [aaa]
-2026-06-19T23:36:42.185+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [bbb]
-2026-06-19T23:36:42.188+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (4:VARCHAR) <- [$2a$10$md/azRsJsYvicl1S3u8SBeufcWOr3nUv.sbgHHYLUplbR6mPW346.]
-2026-06-19T23:36:42.189+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (5:VARCHAR) <- [Dr. A.P.J. Abdul Technical University, Lucknow]
-2026-06-19T23:36:43.082+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-2] c.e.b.revizor.controller.UserController  : User registered successfully: c@gmail.com
-2026-06-19T23:37:33.235+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-8] c.e.b.revizor.controller.FileController  : File upload request received for userId: 1
-2026-06-19T23:37:33.301+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
-2026-06-19T23:37:33.783+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
-2026-06-19T23:37:34.501+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
-2026-06-19T23:37:35.104+05:30 DEBUG 7716 --- [revizor] [http-nio-8080-exec-8] c.e.b.revizor.service.UploadService      : Processing file: btech-cs-5-sem-database-management-system-ncs502-2019.pdf
-2026-06-19T23:37:35.759+05:30  WARN 7716 --- [revizor] [http-nio-8080-exec-8] o.a.pdfbox.pdmodel.font.PDType0Font      : No Unicode mapping for CID+32 (32) in font CKSCTZ+TimesNewRoman
-2026-06-19T23:37:35.885+05:30  WARN 7716 --- [revizor] [http-nio-8080-exec-8] o.a.pdfbox.pdmodel.font.PDType0Font      : No Unicode mapping for CID+32 (32) in font AZNYOD+Calibri
-2026-06-19T23:37:36.383+05:30  WARN 7716 --- [revizor] [http-nio-8080-exec-8] c.e.b.revizor.service.UploadService      : Skipping scanned PDF: btech-cs-5-sem-database-management-system-ncs502-2019.pdf
-2026-06-19T23:37:36.384+05:30 DEBUG 7716 --- [revizor] [http-nio-8080-exec-8] c.e.b.revizor.service.UploadService      : Processing file: btech-cs-5-sem-database-management-system-ncs502-2018.pdf
-2026-06-19T23:37:36.774+05:30  WARN 7716 --- [revizor] [http-nio-8080-exec-8] c.e.b.revizor.service.UploadService      : Skipping scanned PDF: btech-cs-5-sem-database-management-system-ncs502-2018.pdf
-2026-06-19T23:37:36.821+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-8] c.e.b.revizor.service.UploadService      : Sending extracted text to Groq
-2026-06-19T23:37:36.824+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-8] c.e.backend.revizor.service.GroqService  : Sending request to Groq model
-2026-06-19T23:37:36.826+05:30 DEBUG 7716 --- [revizor] [http-nio-8080-exec-8] c.e.backend.revizor.service.GroqService  : Model used: llama-3.3-70b-versatile
-2026-06-19T23:37:41.239+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-8] c.e.backend.revizor.service.GroqService  : Groq response received
-2026-06-19T23:37:41.308+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-8] c.e.b.revizor.service.UploadService      : Questions extracted successfully
-2026-06-19T23:37:41.325+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Combined Upload]
-2026-06-19T23:37:41.325+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:CLOB) <- [=========================
+2026-06-20T00:24:01.716+05:30  WARN 7716 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@24509bf2 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-20T00:24:01.736+05:30  WARN 7716 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@25703cdf (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-20T00:24:01.739+05:30  WARN 7716 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m640ms356µs300ns).
+2026-06-20T00:24:01.751+05:30  WARN 7716 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@1a2ffbb8 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-20T00:24:01.761+05:30  WARN 7716 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@5dfb28ae (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-20T00:24:01.766+05:30  WARN 7716 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@9d01e46 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-20T00:24:01.774+05:30  WARN 7716 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2de25d67 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-20T00:24:01.776+05:30  WARN 7716 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@48759158 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-20T00:24:01.778+05:30  WARN 7716 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@4c4f7ea0 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-20T00:24:01.780+05:30  WARN 7716 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@45646b41 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-20T00:24:01.781+05:30  WARN 7716 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@7a521fef (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-06-20T00:58:47.897+05:30  WARN 7716 --- [revizor] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=34m46s157ms437µs100ns).
+2026-06-20T01:10:24.818+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-3] c.e.b.revizor.controller.FileController  : File upload request received for userId: 1
+2026-06-20T01:10:24.859+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2026-06-20T01:10:25.220+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2026-06-20T01:10:25.682+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2026-06-20T01:10:34.414+05:30 DEBUG 7716 --- [revizor] [http-nio-8080-exec-3] c.e.b.revizor.service.UploadService      : Processing file: btech-cs-5-sem-database-management-system-ncs502-2019.pdf
+2026-06-20T01:10:34.491+05:30  WARN 7716 --- [revizor] [http-nio-8080-exec-3] o.a.pdfbox.pdmodel.font.PDType0Font      : No Unicode mapping for CID+32 (32) in font CKSCTZ+TimesNewRoman
+2026-06-20T01:10:34.525+05:30  WARN 7716 --- [revizor] [http-nio-8080-exec-3] o.a.pdfbox.pdmodel.font.PDType0Font      : No Unicode mapping for CID+32 (32) in font AZNYOD+Calibri
+2026-06-20T01:10:34.574+05:30  WARN 7716 --- [revizor] [http-nio-8080-exec-3] c.e.b.revizor.service.UploadService      : Skipping scanned PDF: btech-cs-5-sem-database-management-system-ncs502-2019.pdf
+2026-06-20T01:10:34.575+05:30 DEBUG 7716 --- [revizor] [http-nio-8080-exec-3] c.e.b.revizor.service.UploadService      : Processing file: btech-cs-5-sem-database-management-system-ncs502-2018.pdf
+2026-06-20T01:10:34.636+05:30  WARN 7716 --- [revizor] [http-nio-8080-exec-3] c.e.b.revizor.service.UploadService      : Skipping scanned PDF: btech-cs-5-sem-database-management-system-ncs502-2018.pdf
+2026-06-20T01:10:34.640+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-3] c.e.b.revizor.service.UploadService      : Sending extracted text to Groq
+2026-06-20T01:10:34.641+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-3] c.e.backend.revizor.service.GroqService  : Sending request to Groq model
+2026-06-20T01:10:34.641+05:30 DEBUG 7716 --- [revizor] [http-nio-8080-exec-3] c.e.backend.revizor.service.GroqService  : Model used: llama-3.3-70b-versatile
+2026-06-20T01:10:37.380+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-3] c.e.backend.revizor.service.GroqService  : Groq response received
+2026-06-20T01:10:37.392+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-3] c.e.b.revizor.service.UploadService      : Questions extracted successfully
+2026-06-20T01:10:37.423+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Combined Upload]
+2026-06-20T01:10:37.423+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:CLOB) <- [=========================
 YEAR: 2019
 =========================
 
@@ -630,83 +236,83 @@ m
 END OF PAPER
 
 ]
-2026-06-19T23:37:43.118+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [dbms]
-2026-06-19T23:37:43.119+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (4:BIGINT) <- [1]
-2026-06-19T23:37:43.119+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (5:VARCHAR) <- [2019]
-2026-06-19T23:37:43.690+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Distinguish between DBMS and RDBMS?]
-2026-06-19T23:37:43.692+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:43.693+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
-2026-06-19T23:37:44.096+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What is data model? List the types of data model used?]
-2026-06-19T23:37:44.097+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:44.098+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
-2026-06-19T23:37:44.554+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What do you understand by Union Comparability?]
-2026-06-19T23:37:44.555+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:44.555+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
-2026-06-19T23:37:44.872+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Discuss the various anomalies associated with normalization?]
-2026-06-19T23:37:44.872+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:44.873+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
-2026-06-19T23:37:45.194+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Differentiate between SQL and PL/SQL?]
-2026-06-19T23:37:45.195+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:45.196+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
-2026-06-19T23:37:45.524+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [MVD is a special case of JD. Discuss?]
-2026-06-19T23:37:45.525+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:45.525+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
-2026-06-19T23:37:45.870+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Differentiate between relational algebra and relational calculus?]
-2026-06-19T23:37:45.871+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:45.872+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
-2026-06-19T23:37:46.217+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Define the term ACID properties?]
-2026-06-19T23:37:46.218+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:46.219+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
-2026-06-19T23:37:46.553+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What do you mean by Cursor?]
-2026-06-19T23:37:46.553+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:46.554+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
-2026-06-19T23:37:46.962+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Distinguish between Shared and Exclusive Locks?]
-2026-06-19T23:37:46.962+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:46.963+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
-2026-06-19T23:37:47.370+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Compare and contrast the differences between File Processing System and DBMS? Also discuss the terms Generalization, Specialization and Aggregation with suitable example?]
-2026-06-19T23:37:47.370+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:47.370+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
-2026-06-19T23:37:47.693+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Discuss the concept of Trigger with a suitable example? Also differentiate between Views and Indexes?]
-2026-06-19T23:37:47.694+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:47.698+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
-2026-06-19T23:37:48.191+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What are RAT axioms? Also discuss the algorithm for finding the closure of functional dependency with a suitable example?]
-2026-06-19T23:37:48.192+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:48.193+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
-2026-06-19T23:37:48.718+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Explain the various recovery techniques from transaction failure in detail?]
-2026-06-19T23:37:48.720+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:48.721+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
-2026-06-19T23:37:49.215+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Compare and contrast the differences between time stamp protocol and validation based protocol for concurrency control?]
-2026-06-19T23:37:49.216+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:49.216+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
-2026-06-19T23:37:49.626+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What are the symbols used in E-R diagram? Construct an E-R diagram for a car insurance company whose customers own one or more cars each. Each car has associated with it zero to any number of recorded accidents? Also convert the E-R diagram into tables?]
-2026-06-19T23:37:49.629+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:49.630+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
-2026-06-19T23:37:49.998+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Distinguish the terms: super key, candidate key, primary key, Unique Key and foreign key with example?]
-2026-06-19T23:37:50.000+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:50.000+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
-2026-06-19T23:37:50.443+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Consider the following Scheme: SUPPLIER (SUPPLIER ID, SUPPLIER_NAME, SUPPLIER_ADDRESS) PARTS (PART ID, PART_NAME, COLOR) CATALOG (SUPPLIER ID, PART ID, COST) Write the following queries in Relational Algebra and in SQL: (i) Find the name of the suppliers who supply Black Parts. (ii) Find the name of suppliers who supply both Blue and Black Parts. (iii) Find the name of suppliers who supply all Parts.]
-2026-06-19T23:37:50.445+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:50.445+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
-2026-06-19T23:37:51.059+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Explain the concepts of natural join? Also discuss the types of Outer join with suitable example?]
-2026-06-19T23:37:51.063+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:51.068+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
-2026-06-19T23:37:51.452+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What is the purpose of Normalization? Explain 1NF, 2NF, 3NF and BCNF with suitable example?]
-2026-06-19T23:37:51.453+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:51.454+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
-2026-06-19T23:37:52.083+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What do you mean by Loss-Less Join Decomposition? Explain with suitable example that how functional dependency can be used to show that decompositions are loss-less?]
-2026-06-19T23:37:52.083+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:52.084+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
-2026-06-19T23:37:52.696+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What is deadlock? Discuss about the deadlock detection? Also mention the steps for recovery from deadlock?]
-2026-06-19T23:37:52.699+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:52.699+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
-2026-06-19T23:37:53.309+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What are distributed databases? Discuss the various concurrency protocol used in distributed database in detail?]
-2026-06-19T23:37:53.314+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:53.315+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
-2026-06-19T23:37:53.925+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Discuss the concept of two phase locking protocol? Also differentiate between strict two phase & rigorous two phase locking protocol? Explain the concept of Multiple Granularity? Also discuss Multi-version Schemes?]
-2026-06-19T23:37:53.926+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:53.927+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
-2026-06-19T23:37:54.539+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Combined Upload]
-2026-06-19T23:37:54.540+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:CLOB) <- [=========================
+2026-06-20T01:10:39.153+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [dbms]
+2026-06-20T01:10:39.153+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (4:BIGINT) <- [1]
+2026-06-20T01:10:39.154+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (5:VARCHAR) <- [2019]
+2026-06-20T01:10:39.475+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Distinguish between DBMS and RDBMS?]
+2026-06-20T01:10:39.476+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:39.477+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
+2026-06-20T01:10:39.838+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What is data model? List the types of data model used?]
+2026-06-20T01:10:39.839+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:39.840+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
+2026-06-20T01:10:40.180+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What do you understand by Union Comparability?]
+2026-06-20T01:10:40.182+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:40.183+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
+2026-06-20T01:10:40.733+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Discuss the various anomalies associated with normalization?]
+2026-06-20T01:10:40.734+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:40.734+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
+2026-06-20T01:10:41.041+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Differentiate between SQL and PL/SQL?]
+2026-06-20T01:10:41.042+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:41.049+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
+2026-06-20T01:10:41.407+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [MVD is a special case of JD. Discuss?]
+2026-06-20T01:10:41.407+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:41.408+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
+2026-06-20T01:10:41.726+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Differentiate between relational algebra and relational calculus?]
+2026-06-20T01:10:41.732+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:41.735+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
+2026-06-20T01:10:42.034+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Define the term ACID properties?]
+2026-06-20T01:10:42.036+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:42.036+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
+2026-06-20T01:10:42.398+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What do you mean by Cursor?]
+2026-06-20T01:10:42.399+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:42.399+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
+2026-06-20T01:10:42.700+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Distinguish between Shared and Exclusive Locks?]
+2026-06-20T01:10:42.701+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:42.701+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
+2026-06-20T01:10:43.004+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Compare and contrast the differences between File Processing System and DBMS? Also discuss the terms Generalization, Specialization and Aggregation with suitable example?]
+2026-06-20T01:10:43.005+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:43.005+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
+2026-06-20T01:10:43.458+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Discuss the concept of Trigger with a suitable example? Also differentiate between Views and Indexes?]
+2026-06-20T01:10:43.466+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:43.467+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
+2026-06-20T01:10:43.784+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What are RAT axioms? Also discuss the algorithm for finding the closure of functional dependency with a suitable example?]
+2026-06-20T01:10:43.785+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:43.785+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
+2026-06-20T01:10:44.281+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Explain the various recovery techniques from transaction failure in detail?]
+2026-06-20T01:10:44.282+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:44.282+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
+2026-06-20T01:10:44.592+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Compare and contrast the differences between time stamp protocol and validation based protocol for concurrency control?]
+2026-06-20T01:10:44.594+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:44.597+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
+2026-06-20T01:10:45.302+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What are the symbols used in E-R diagram? Construct an E-R diagram for a car insurance company whose customers own one or more cars each. Each car has associated with it zero to any number of recorded accidents? Also convert the E-R diagram into tables?]
+2026-06-20T01:10:45.303+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:45.305+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
+2026-06-20T01:10:45.924+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Distinguish the terms: super key, candidate key, primary key, Unique Key and foreign key with example?]
+2026-06-20T01:10:45.937+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:45.938+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
+2026-06-20T01:10:46.325+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Consider the following Scheme: SUPPLIER (SUPPLIER ID, SUPPLIER_NAME, SUPPLIER_ADDRESS) PARTS (PART ID, PART_NAME, COLOR) CATALOG (SUPPLIER ID, PART ID, COST) Write the following queries in Relational Algebra and in SQL: (i) Find the name of the suppliers who supply Black Parts. (ii) Find the name of suppliers who supply both Blue and Black Parts. (iii) Find the name of suppliers who supply all Parts.]
+2026-06-20T01:10:46.331+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:46.334+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
+2026-06-20T01:10:46.690+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Explain the concepts of natural join? Also discuss the types of Outer join with suitable example?]
+2026-06-20T01:10:46.691+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:46.692+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
+2026-06-20T01:10:47.146+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What is the purpose of Normalization? Explain 1NF, 2NF, 3NF and BCNF with suitable example?]
+2026-06-20T01:10:47.150+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:47.152+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
+2026-06-20T01:10:47.554+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What do you mean by Loss-Less Join Decomposition? Explain with suitable example that how functional dependency can be used to show that decompositions are loss-less?]
+2026-06-20T01:10:47.555+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:47.555+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
+2026-06-20T01:10:47.919+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What is deadlock? Discuss about the deadlock detection? Also mention the steps for recovery from deadlock?]
+2026-06-20T01:10:47.920+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:47.920+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
+2026-06-20T01:10:48.245+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What are distributed databases? Discuss the various concurrency protocol used in distributed database in detail?]
+2026-06-20T01:10:48.246+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:48.246+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
+2026-06-20T01:10:48.599+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Discuss the concept of two phase locking protocol? Also differentiate between strict two phase & rigorous two phase locking protocol? Explain the concept of Multiple Granularity? Also discuss Multi-version Schemes?]
+2026-06-20T01:10:48.600+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:48.600+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2019]
+2026-06-20T01:10:48.918+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Combined Upload]
+2026-06-20T01:10:48.919+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:CLOB) <- [=========================
 YEAR: 2019
 =========================
 
@@ -916,109 +522,149 @@ m
 END OF PAPER
 
 ]
-2026-06-19T23:37:56.498+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [dbms]
-2026-06-19T23:37:56.500+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (4:BIGINT) <- [1]
-2026-06-19T23:37:56.501+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (5:VARCHAR) <- [2018]
-2026-06-19T23:37:57.019+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Explain Specialization.]
-2026-06-19T23:37:57.020+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:57.020+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
-2026-06-19T23:37:57.406+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Write Advantages of Database.]
-2026-06-19T23:37:57.408+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:57.408+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
-2026-06-19T23:37:57.749+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Define DML.]
-2026-06-19T23:37:57.750+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:57.751+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
-2026-06-19T23:37:58.122+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Explain Logical data Independence.]
-2026-06-19T23:37:58.123+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:58.124+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
-2026-06-19T23:37:58.453+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Explain Entity Integrity Constraints.]
-2026-06-19T23:37:58.454+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:58.455+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
-2026-06-19T23:37:58.819+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Define 2 NF.]
-2026-06-19T23:37:58.820+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:58.820+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
-2026-06-19T23:37:59.164+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Explain I in ACID Property.]
-2026-06-19T23:37:59.165+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:59.165+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
-2026-06-19T23:37:59.529+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Define schedule.]
-2026-06-19T23:37:59.531+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:59.531+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
-2026-06-19T23:37:59.883+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Define Exclusive Lock.]
-2026-06-19T23:37:59.884+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:37:59.885+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
-2026-06-19T23:38:00.235+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Define replication in distributed database.]
-2026-06-19T23:38:00.236+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:38:00.236+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
-2026-06-19T23:38:00.551+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Discuss the role of database administrator.]
-2026-06-19T23:38:00.553+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:38:00.554+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
-2026-06-19T23:38:01.096+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Discuss Join and Types with suitable example.]
-2026-06-19T23:38:01.097+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:38:01.099+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
-2026-06-19T23:38:01.400+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What is Trigger? Explain different trigger with example]
-2026-06-19T23:38:01.401+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:38:01.401+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
-2026-06-19T23:38:01.741+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Write difference between BCNF Vs 3 NF.]
-2026-06-19T23:38:01.742+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:38:01.743+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
-2026-06-19T23:38:02.321+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What is Two phase Locking (2PL)? Describe with the help of example.]
-2026-06-19T23:38:02.322+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:38:02.322+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
-2026-06-19T23:38:02.937+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What do you mean by serializability? Discuss the conflict and view serialzability with example. Discuss the testing of serializability also.]
-2026-06-19T23:38:02.938+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:38:02.939+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
-2026-06-19T23:38:03.319+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What are multi version schemes of concurrency control? Describe with the help of an example. Discuss the various Time stamping protocols for concurrency control also.]
-2026-06-19T23:38:03.321+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:38:03.322+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
-2026-06-19T23:38:03.885+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Consider the following relation. The Primary key is Rollno, Isbn, Student(RollNo, Name, Branch), Book(Isbn, Title, Author, Publisher) Issue(Rollno, Isbn, te_of_issue). Write the query in Relational algebra and SQL of the following- i) List the Roll Number and Name of All CSE Branch Student. ii) Find the name of students who have issued a book of publication ‘BPB’. iii) List the title and author of all books which are issued by a student name started with a. iv) List the title of all books issued on or before 20/09/2012. v) List the name of student who will read the book of author named ‘Sanjeev’.]
-2026-06-19T23:38:03.887+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:38:03.887+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
-2026-06-19T23:38:04.573+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Draw an ER diagram of Hospital or Bank with showing the Specialization, Aggregation, Generalization. Also convert it in to relational schemas and SQL DDL.]
-2026-06-19T23:38:04.574+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:38:04.574+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
-2026-06-19T23:38:05.050+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Explain the Primary Key, Super Key, Foreign Key and Candidate key with example.]
-2026-06-19T23:38:05.052+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:38:05.052+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
-2026-06-19T23:38:05.384+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Short Notes of the Following- i) MVD or JD ii) Normalization with advantages]
-2026-06-19T23:38:05.385+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:38:05.386+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
-2026-06-19T23:38:05.765+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What is Log? How is it maintained? Discuss the features of deferred database modification and immediate database modification in brief.]
-2026-06-19T23:38:05.765+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:38:05.766+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
-2026-06-19T23:38:06.216+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What do you mean by Transaction? Explain transaction property with detail and suitable example.]
-2026-06-19T23:38:06.217+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:38:06.217+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
-2026-06-19T23:38:06.548+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Explain all database languages in detail with example.]
-2026-06-19T23:38:06.549+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:38:06.550+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
-2026-06-19T23:38:06.915+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Explain data fragmentation with types.]
-2026-06-19T23:38:06.916+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
-2026-06-19T23:38:06.917+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
-2026-06-19T23:38:07.438+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-8] c.e.b.revizor.service.UploadService      : Upload process completed for userId 1
-2026-06-19T23:38:07.440+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-8] c.e.b.revizor.controller.FileController  : 2 files uploaded by user 1
-2026-06-19T23:38:07.948+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-9] c.e.b.revizor.service.DashboardService   : Generating dashboard for userId: 1
-2026-06-19T23:38:07.962+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
-2026-06-19T23:38:08.687+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
-2026-06-19T23:38:09.402+05:30 DEBUG 7716 --- [revizor] [http-nio-8080-exec-9] c.e.b.revizor.service.DashboardService   : Questions found: 49
-2026-06-19T23:38:09.422+05:30 DEBUG 7716 --- [revizor] [http-nio-8080-exec-9] c.e.b.revizor.service.DashboardService   : Sending 49 questions for unit analysis
-2026-06-19T23:38:09.424+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-9] c.e.b.revizor.service.DashboardService   : Generating unit analysis
-2026-06-19T23:38:09.424+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-9] c.e.b.r.service.UnitAnalysisService      : Starting unit analysis for university: Dr. A.P.J. Abdul Technical University, Lucknow
-2026-06-19T23:38:09.424+05:30 DEBUG 7716 --- [revizor] [http-nio-8080-exec-9] c.e.backend.revizor.service.GroqService  : Model used: llama-3.3-70b-versatile
-2026-06-19T23:38:11.518+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-9] c.e.backend.revizor.service.GroqService  : Groq response received
-2026-06-19T23:38:11.524+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-9] c.e.b.revizor.service.DashboardService   : Unit analysis completed
-2026-06-19T23:38:11.524+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-9] c.e.b.revizor.service.DashboardService   : Generating frequency analysis
-2026-06-19T23:38:11.526+05:30 DEBUG 7716 --- [revizor] [http-nio-8080-exec-9] c.e.backend.revizor.service.GroqService  : Model used: llama-3.3-70b-versatile
-2026-06-19T23:38:13.622+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-9] c.e.backend.revizor.service.GroqService  : Groq response received
-2026-06-19T23:38:13.631+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-9] c.e.b.revizor.service.DashboardService   : Frequency analysis completed
-2026-06-19T23:38:13.632+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-9] c.e.b.revizor.service.DashboardService   : Dashboard generated successfully
-2026-06-19T23:38:42.747+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-10] c.e.b.r.service.AnswerGenerationService  : Generating answer for question: Normalization
-2026-06-19T23:38:42.748+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-10] c.e.b.r.service.AnswerGenerationService  : Generating answer PDF for subject: dbms
-2026-06-19T23:38:42.749+05:30 DEBUG 7716 --- [revizor] [http-nio-8080-exec-10] c.e.backend.revizor.service.GroqService  : Model used: llama-3.3-70b-versatile
-2026-06-19T23:38:45.902+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-10] c.e.backend.revizor.service.GroqService  : Groq response received
-2026-06-19T23:38:45.971+05:30 DEBUG 7716 --- [revizor] [http-nio-8080-exec-10] c.e.b.r.service.AnswerGenerationService  : Answer generated successfully
-2026-06-19T23:38:45.972+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-10] c.e.b.r.service.AnswerGenerationService  : Generating answer for question: Concurrency Control
-2026-06-19T23:38:45.972+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-10] c.e.b.r.service.AnswerGenerationService  : Generating answer PDF for subject: dbms
-2026-06-19T23:38:45.973+05:30 DEBUG 7716 --- [revizor] [http-nio-8080-exec-10] c.e.backend.revizor.service.GroqService  : Model used: llama-3.3-70b-versatile
-2026-06-19T23:38:49.349+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-10] c.e.backend.revizor.service.GroqService  : Groq response received
-2026-06-19T23:38:49.384+05:30 DEBUG 7716 --- [revizor] [http-nio-8080-exec-10] c.e.b.r.service.AnswerGenerationService  : Answer generated successfully
-2026-06-19T23:38:49.417+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-10] c.e.b.r.service.AnswerGenerationService  : PDF generated successfully
+2026-06-20T01:10:50.184+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [dbms]
+2026-06-20T01:10:50.186+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (4:BIGINT) <- [1]
+2026-06-20T01:10:50.186+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (5:VARCHAR) <- [2018]
+2026-06-20T01:10:50.613+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Explain Specialization.]
+2026-06-20T01:10:50.614+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:50.614+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
+2026-06-20T01:10:51.035+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Write Advantages of Database.]
+2026-06-20T01:10:51.036+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:51.036+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
+2026-06-20T01:10:51.507+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Define DML.]
+2026-06-20T01:10:51.507+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:51.509+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
+2026-06-20T01:10:51.852+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Explain Logical data Independence.]
+2026-06-20T01:10:51.856+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:51.856+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
+2026-06-20T01:10:52.266+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Explain Entity Integrity Constraints.]
+2026-06-20T01:10:52.267+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:52.267+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
+2026-06-20T01:10:52.947+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Define 2 NF.]
+2026-06-20T01:10:52.948+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:52.948+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
+2026-06-20T01:10:53.283+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Explain I in ACID Property.]
+2026-06-20T01:10:53.283+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:53.283+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
+2026-06-20T01:10:53.651+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Define schedule.]
+2026-06-20T01:10:53.652+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:53.652+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
+2026-06-20T01:10:54.106+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Define Exclusive Lock.]
+2026-06-20T01:10:54.107+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:54.108+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
+2026-06-20T01:10:54.415+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Define replication in distributed database.]
+2026-06-20T01:10:54.416+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:54.416+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
+2026-06-20T01:10:54.925+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Discuss the role of database administrator.]
+2026-06-20T01:10:54.930+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:54.932+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
+2026-06-20T01:10:55.335+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Discuss Join and Types with suitable example.]
+2026-06-20T01:10:55.336+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:55.336+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
+2026-06-20T01:10:55.949+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What is Trigger? Explain different trigger with example]
+2026-06-20T01:10:55.950+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:55.950+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
+2026-06-20T01:10:56.267+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Write difference between BCNF Vs 3 NF.]
+2026-06-20T01:10:56.268+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:56.268+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
+2026-06-20T01:10:56.591+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What is Two phase Locking (2PL)? Describe with the help of example.]
+2026-06-20T01:10:56.592+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:56.592+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
+2026-06-20T01:10:57.181+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What do you mean by serializability? Discuss the conflict and view serialzability with example. Discuss the testing of serializability also.]
+2026-06-20T01:10:57.182+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:57.182+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
+2026-06-20T01:10:57.532+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What are multi version schemes of concurrency control? Describe with the help of an example. Discuss the various Time stamping protocols for concurrency control also.]
+2026-06-20T01:10:57.533+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:57.533+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
+2026-06-20T01:10:57.856+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Consider the following relation. The Primary key is Rollno, Isbn, Student(RollNo, Name, Branch), Book(Isbn, Title, Author, Publisher) Issue(Rollno, Isbn, te_of_issue). Write the query in Relational algebra and SQL of the following- i) List the Roll Number and Name of All CSE Branch Student. ii) Find the name of students who have issued a book of publication ‘BPB’. iii) List the title and author of all books which are issued by a student name started with a. iv) List the title of all books issued on or before 20/09/2012. v) List the name of student who will read the book of author named ‘Sanjeev’.]
+2026-06-20T01:10:57.856+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:57.857+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
+2026-06-20T01:10:58.151+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Draw an ER diagram of Hospital or Bank with showing the Specialization, Aggregation, Generalization. Also convert it in to relational schemas and SQL DDL.]
+2026-06-20T01:10:58.152+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:58.152+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
+2026-06-20T01:10:58.441+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Explain the Primary Key, Super Key, Foreign Key and Candidate key with example.]
+2026-06-20T01:10:58.441+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:58.442+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
+2026-06-20T01:10:58.731+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Short Notes of the Following- i) MVD or JD ii) Normalization with advantages]
+2026-06-20T01:10:58.732+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:58.732+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
+2026-06-20T01:10:59.034+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What is Log? How is it maintained? Discuss the features of deferred database modification and immediate database modification in brief.]
+2026-06-20T01:10:59.034+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:59.035+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
+2026-06-20T01:10:59.342+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [What do you mean by Transaction? Explain transaction property with detail and suitable example.]
+2026-06-20T01:10:59.345+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:59.345+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
+2026-06-20T01:10:59.653+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Explain all database languages in detail with example.]
+2026-06-20T01:10:59.653+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:59.653+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
+2026-06-20T01:10:59.994+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Explain data fragmentation with types.]
+2026-06-20T01:10:59.994+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:BIGINT) <- [1]
+2026-06-20T01:10:59.997+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [2018]
+2026-06-20T01:11:00.304+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-3] c.e.b.revizor.service.UploadService      : Upload process completed for userId 1
+2026-06-20T01:11:00.305+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-3] c.e.b.revizor.controller.FileController  : 2 files uploaded by user 1
+2026-06-20T01:11:00.342+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2026-06-20T01:11:00.954+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [2]
+2026-06-20T01:11:01.272+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [3]
+2026-06-20T01:11:01.847+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [4]
+2026-06-20T01:11:02.449+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [5]
+2026-06-20T01:11:02.899+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [6]
+2026-06-20T01:11:03.396+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [7]
+2026-06-20T01:11:03.730+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [8]
+2026-06-20T01:11:04.139+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [9]
+2026-06-20T01:11:04.549+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [10]
+2026-06-20T01:11:05.166+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [11]
+2026-06-20T01:11:05.535+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [12]
+2026-06-20T01:11:06.187+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [13]
+2026-06-20T01:11:06.802+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [14]
+2026-06-20T01:11:07.215+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [15]
+2026-06-20T01:11:07.641+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [16]
+2026-06-20T01:11:07.954+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [17]
+2026-06-20T01:11:08.646+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [18]
+2026-06-20T01:11:09.264+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [19]
+2026-06-20T01:11:09.668+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [20]
+2026-06-20T01:11:10.225+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [21]
+2026-06-20T01:11:10.570+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [22]
+2026-06-20T01:11:11.080+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [23]
+2026-06-20T01:11:11.513+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [24]
+2026-06-20T01:11:11.813+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [25]
+2026-06-20T01:11:12.535+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [26]
+2026-06-20T01:11:12.852+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [27]
+2026-06-20T01:11:13.161+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [28]
+2026-06-20T01:11:13.764+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [29]
+2026-06-20T01:11:14.175+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [30]
+2026-06-20T01:11:14.789+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [31]
+2026-06-20T01:11:15.380+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [32]
+2026-06-20T01:11:15.915+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [33]
+2026-06-20T01:11:16.431+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [34]
+2026-06-20T01:11:17.044+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [35]
+2026-06-20T01:11:17.659+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [36]
+2026-06-20T01:11:18.271+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [37]
+2026-06-20T01:11:18.634+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [38]
+2026-06-20T01:11:18.920+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [39]
+2026-06-20T01:11:19.256+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [40]
+2026-06-20T01:11:19.579+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [41]
+2026-06-20T01:11:19.907+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [42]
+2026-06-20T01:11:20.238+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [43]
+2026-06-20T01:11:20.561+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [44]
+2026-06-20T01:11:21.013+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [45]
+2026-06-20T01:11:21.346+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [46]
+2026-06-20T01:11:21.903+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [47]
+2026-06-20T01:11:22.292+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [48]
+2026-06-20T01:11:22.664+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [49]
+2026-06-20T01:11:23.390+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2026-06-20T01:11:23.693+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [2]
+2026-06-20T01:11:24.827+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-2] c.e.b.revizor.service.DashboardService   : Generating dashboard for userId: 1
+2026-06-20T01:11:24.840+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2026-06-20T01:11:25.438+05:30 TRACE 7716 --- [revizor] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1]
+2026-06-20T01:11:25.774+05:30 DEBUG 7716 --- [revizor] [http-nio-8080-exec-2] c.e.b.revizor.service.DashboardService   : Questions found: 49
+2026-06-20T01:11:25.796+05:30 DEBUG 7716 --- [revizor] [http-nio-8080-exec-2] c.e.b.revizor.service.DashboardService   : Sending 49 questions for unit analysis
+2026-06-20T01:11:25.803+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-2] c.e.b.revizor.service.DashboardService   : Generating unit analysis
+2026-06-20T01:11:25.803+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-2] c.e.b.r.service.UnitAnalysisService      : Starting unit analysis for university: Dr. A.P.J. Abdul Technical University, Lucknow
+2026-06-20T01:11:25.803+05:30 DEBUG 7716 --- [revizor] [http-nio-8080-exec-2] c.e.backend.revizor.service.GroqService  : Model used: llama-3.3-70b-versatile
+2026-06-20T01:11:26.771+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-2] c.e.backend.revizor.service.GroqService  : Groq response received
+2026-06-20T01:11:26.780+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-2] c.e.b.revizor.service.DashboardService   : Unit analysis completed
+2026-06-20T01:11:26.783+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-2] c.e.b.revizor.service.DashboardService   : Generating frequency analysis
+2026-06-20T01:11:26.783+05:30 DEBUG 7716 --- [revizor] [http-nio-8080-exec-2] c.e.backend.revizor.service.GroqService  : Model used: llama-3.3-70b-versatile
+2026-06-20T01:11:30.971+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-2] c.e.backend.revizor.service.GroqService  : Groq response received
+2026-06-20T01:11:30.980+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-2] c.e.b.revizor.service.DashboardService   : Frequency analysis completed
+2026-06-20T01:11:30.982+05:30  INFO 7716 --- [revizor] [http-nio-8080-exec-2] c.e.b.revizor.service.DashboardService   : Dashboard generated successfully
