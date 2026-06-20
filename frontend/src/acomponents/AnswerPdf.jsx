@@ -9,6 +9,8 @@ const AnswerPdf = () => {
 
   const navigate = useNavigate();
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const generatePdf = async () => {
 
     try {
@@ -58,7 +60,7 @@ const AnswerPdf = () => {
       console.log(frequencyData);
 
       const response = await fetch(
-        "https://revizorfullstack-production.up.railway.app/api/answer/pdf",
+        `${API_URL}/answer/pdf`,
         {
           method: "POST",
           headers: {

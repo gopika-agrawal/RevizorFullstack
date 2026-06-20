@@ -189,10 +189,11 @@ const SignupForm = ({ setIsLoggedIn }) => {
 
     const navigate = useNavigate();
 
-
+    const API_URL = import.meta.env.VITE_API_URL;
+    
     async function onSubmit(data) {
         try{
-            const response = await fetch("https://revizorfullstack-production.up.railway.app/api/users", {
+            const response = await fetch(`${API_URL}/users`, {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"

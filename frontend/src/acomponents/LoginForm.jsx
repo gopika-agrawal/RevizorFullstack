@@ -105,6 +105,8 @@ const LoginForm = ({ setIsLoggedIn }) => {
 
     const navigate = useNavigate();
 
+    const API_URL = import.meta.env.VITE_API_URL;
+
     const {
         register,
         handleSubmit,
@@ -119,7 +121,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
         // console.log(data);
         try{
             
-            const response = await fetch("https://revizorfullstack-production.up.railway.app/api/users/login",{
+            const response = await fetch(`${API_URL}/users/login`,{
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

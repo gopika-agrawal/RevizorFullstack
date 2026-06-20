@@ -67,6 +67,8 @@ const FileUploader = () => {
     
     const navigate = useNavigate();
 
+    const API_URL = import.meta.env.VITE_API_URL;
+
     const changeHandler = (event) => {
 
         const existingNames =
@@ -157,7 +159,7 @@ const FileUploader = () => {
             }
             console.log("Sending request with userId:", id);
 
-            const url = `https://revizorfullstack-production.up.railway.app/api/upload/${id}`;
+            const url = `${API_URL}/upload/${id}`;
 
             console.log(url);
             const response = await fetch(url, {
@@ -180,7 +182,7 @@ const FileUploader = () => {
             
             navigate("/dashboard/unit");
 
-            const dashboardResponse = await fetch(`https://revizorfullstack-production.up.railway.app/api/dashboard/${id}`, {
+            const dashboardResponse = await fetch(`${API_URL}/dashboard/${id}`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`
                 }

@@ -30,7 +30,10 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {
+        "http://localhost:5173",
+        "https://revizor-ai.vercel.app"
+})
 public class UserController {
 
     private final UserService userService;

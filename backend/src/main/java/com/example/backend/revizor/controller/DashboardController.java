@@ -20,7 +20,10 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @RestController
 @RequestMapping("/dashboard")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {
+        "http://localhost:5173",
+        "https://revizor-ai.vercel.app"
+})
 public class DashboardController {
 
     private final DashboardService dashboardService;

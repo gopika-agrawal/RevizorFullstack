@@ -22,7 +22,10 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/answer")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {
+        "http://localhost:5173",
+        "https://revizor-ai.vercel.app"
+})
 public class AnswerPdfController {
 
         private final AnswerGenerationService answerGenerationService;
