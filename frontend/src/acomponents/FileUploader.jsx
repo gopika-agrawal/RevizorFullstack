@@ -157,7 +157,7 @@ const FileUploader = () => {
             }
             console.log("Sending request with userId:", id);
 
-            const url = `https://revizorfullstack-production.up.railway.app/upload/${id}`;
+            const url = `https://revizorfullstack-production.up.railway.app/api/upload/${id}`;
 
             console.log(url);
             const response = await fetch(url, {
@@ -180,7 +180,7 @@ const FileUploader = () => {
             
             navigate("/dashboard/unit");
 
-            const dashboardResponse = await fetch(`https://revizorfullstack-production.up.railway.app/dashboard/${id}`, {
+            const dashboardResponse = await fetch(`https://revizorfullstack-production.up.railway.app/api/dashboard/${id}`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`
                 }

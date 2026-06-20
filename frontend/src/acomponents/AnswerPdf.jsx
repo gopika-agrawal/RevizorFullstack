@@ -58,7 +58,7 @@ const AnswerPdf = () => {
       console.log(frequencyData);
 
       const response = await fetch(
-        "https://revizorfullstack-production.up.railway.app/answer/pdf",
+        "https://revizorfullstack-production.up.railway.app/api/answer/pdf",
         {
           method: "POST",
           headers: {

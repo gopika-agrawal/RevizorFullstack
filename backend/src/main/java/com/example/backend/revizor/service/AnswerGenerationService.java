@@ -364,6 +364,16 @@ public class AnswerGenerationService {
                                 - No code blocks.
                                 - Suitable for full marks.
 
+                                Return ONLY valid JSON.
+
+                                Rules:
+                                1. No markdown.
+                                2. No explanation.
+                                3. No code fences.
+                                4. No trailing commas.
+                                5. Output must be parseable by JSON.parse().
+                                6. Return JSON array only.
+
                                 Subject Awareness:
 
                                 First identify the subject context.
@@ -482,8 +492,6 @@ public class AnswerGenerationService {
                         String subject,
                         String frequencyJson)
                         throws Exception {
-
-               
 
                 ObjectMapper objectMapper = new ObjectMapper();
 

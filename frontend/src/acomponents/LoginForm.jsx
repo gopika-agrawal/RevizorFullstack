@@ -119,7 +119,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
         // console.log(data);
         try{
             
-            const response = await fetch("https://revizorfullstack-production.up.railway.app/users/login",{
+            const response = await fetch("https://revizorfullstack-production.up.railway.app/api/users/login",{
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
