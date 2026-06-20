@@ -12,12 +12,14 @@ import CustomTooltip from "./CustomTooltip";
 
 const UnitChart = ({ unitAnalysis }) => {
 
-  if(!unitAnalysis?.length){
+  if (!unitAnalysis?.length) {
     return null;
   }
 
+  const isMobile = window.innerWidth < 640;
+
   return (
-    <div className="w-full h-[500px] md:h-[450px] bg-white rounded-xl shadow-md p-4">
+    <div className="w-full h-[320px] sm:h-[400px] md:h-[450px] bg-white rounded-xl shadow-md p-2 sm:p-4">
 
       <ResponsiveContainer width="100%" height="100%">
 
@@ -27,26 +29,25 @@ const UnitChart = ({ unitAnalysis }) => {
           margin={{
             top: 20,
             right: 20,
-            left: 80,
+            left: isMobile ? 10 : 80,
             bottom: 20
           }}
         >
 
           <CartesianGrid strokeDasharray="3 3" />
 
-          <XAxis
-            type="number"
-          />
+          <XAxis type="number" />
 
           <YAxis
             dataKey="unit"
             type="category"
-            width={140}
+            width={isMobile ? 55 : 140}
+            tick={{ fontSize: isMobile ? 12 : 14 }}
           />
 
           <Tooltip
-            cursor={{fill: "#f8fffe"}}
-            content={<CustomTooltip/>}
+            cursor={{ fill: "#f8fffe" }}
+            content={<CustomTooltip />}
           />
 
           <Bar
@@ -57,9 +58,10 @@ const UnitChart = ({ unitAnalysis }) => {
             <LabelList
               dataKey="questionCount"
               position="right"
-              fontSize={12}
+              fontSize={isMobile ? 10 : 12}
             />
           </Bar>
+
         </BarChart>
 
       </ResponsiveContainer>
