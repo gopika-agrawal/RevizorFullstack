@@ -147,7 +147,7 @@ JWT_EXPIRATION=
 ```bash
 git clone https://github.com/gopika-agrawal/RevizorFullstack
 
-cd revizor
+cd Revizor-Fullstack
 ```
 
 ### Backend Setup
