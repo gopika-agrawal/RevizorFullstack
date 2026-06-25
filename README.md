@@ -2,7 +2,7 @@
 
 Revizor is an AI-powered exam preparation platform that analyzes Previous Year Question Papers (PYQs) and automatically generates unit-wise insights, frequency analysis, and exam-oriented answer PDFs. It helps students identify high-priority topics and focus their preparation on the most frequently asked concepts.
 
-## 🌟 Features
+### 🌟 Features
 
 ### 📄 PDF Upload & Processing
 
